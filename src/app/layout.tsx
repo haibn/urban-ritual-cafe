@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Urbanist, Nunito_Sans } from 'next/font/google';
 import './globals.css';
+import Navbar from '../../components/layout/Navbar';
 
 const urbanist = Urbanist({
   variable: '--font-urbanist',
@@ -24,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.variable} ${nunitoSans.variable} antialiased`}>{children}</body>
+      <body className={`${urbanist.variable} ${nunitoSans.variable} antialiased`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
