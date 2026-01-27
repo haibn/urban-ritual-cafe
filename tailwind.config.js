@@ -5,13 +5,4 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
   ],
-  theme: {
-    extend: {
-      fontFamily: {
-        urbanist: ['var(--font-urbanist)'],
-        nunito: ['var(--font-nunito-sans)'],
-      },
-    },
-  },
-  plugins: [],
 };

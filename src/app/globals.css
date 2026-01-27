@@ -3,4 +3,5 @@
 @theme inline {
   --font-urbanist: var(--font-urbanist);
   --font-nunito: var(--font-nunito-sans);
+  --font-petit: var(--font-petit-formal-script);
 }

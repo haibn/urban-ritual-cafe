@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Urbanist, Nunito_Sans } from 'next/font/google';
+import { Urbanist, Nunito_Sans, Petit_Formal_Script } from 'next/font/google';
 import './globals.css';
 import Navbar from '../../components/layout/Navbar';
 
@@ -11,6 +11,14 @@ const urbanist = Urbanist({
 const nunitoSans = Nunito_Sans({
   variable: '--font-nunito-sans',
   subsets: ['latin'],
+  weight: ['400'], // Specify the weights you need (Petit Formal Script only has 400)
+  display: 'swap', // 'swap' is recommended to avoid layout shifts
+});
+
+const petitFormalScript = Petit_Formal_Script({
+  variable: '--font-petit-formal-script',
+  subsets: ['latin'],
+  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.variable} ${nunitoSans.variable} antialiased`}>
+      <body
+        className={`${urbanist.variable} ${nunitoSans.variable} ${petitFormalScript.variable} antialiased`}
+      >
         <Navbar />
         {children}
       </body>

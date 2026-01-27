@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathname = usePathname(); // gives current path, e.g., "/blog"
 
   return (
-    <nav className="flex items-center justify-between text-xl font-medium tracking-wide shadow-md">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-white text-xl font-medium tracking-wide shadow-md">
       <Link
         href="/"
         className={`font-urbanist py-4 pl-20 ${pathname === '/' ? 'text-[#BE8F59]' : ''}`}
@@ -16,8 +16,8 @@ export default function Navbar() {
         <Image
           src={'/logos/urban-ritual-logo.png'}
           alt="Home"
-          width={410}
-          height={64}
+          width={330}
+          height={330 / (186 / 1254)}
           className="h-auto"
         />
       </Link>
