@@ -23,24 +23,48 @@ export default function InfiniteDrinksGallery({
   const animationRef = useRef<number | null>(null);
   const scrollPositionRef = useRef(0);
   const lastTimestampRef = useRef<number | null>(null);
+  const singleSetWidthRef = useRef(0); // Cache the measured width
 
   /**
    * INFINITE SCROLL STRATEGY:
    *
-   * We duplicate the drinks array twice to create a seamless loop.
-   * When the scroll position reaches the end of the first set,
-   * we instantly reset it back to the beginning without any visual jump.
+   * We duplicate the drinks array THREE times to create a seamless loop.
+   * This ensures the viewport is always filled with content, even on wide screens.
    *
-   * Example with 3 items: [A, B, C, A, B, C]
-   * - User sees items scrolling: A → B → C → A → B → C...
-   * - When we reach the second A, we reset position to the first A
+   * Example with 3 items: [A, B, C, A, B, C, A, B, C]
+   * - User sees items scrolling: A → B → C → A → B → C → A → B → C...
+   * - When we reach the second set's start, we reset position to the first set
    * - Since they're identical, the reset is invisible to the user
+   *
+   * KEY TO SEAMLESSNESS: We measure the ACTUAL rendered width, not calculate it.
    */
-  const duplicatedDrinks = [...drinks, ...drinks];
+  const duplicatedDrinks = [...drinks, ...drinks, ...drinks];
 
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller || drinks.length === 0) return;
+
+    /**
+     * MEASURE ACTUAL CONTENT WIDTH
+     *
+     * We measure the actual scrollWidth of the scroller after rendering.
+     * This accounts for responsive sizing, browser rendering, and actual layout.
+     * We divide by 3 to get the width of one set of drinks.
+     */
+    const measureWidth = () => {
+      if (scroller) {
+        // scrollWidth gives us the total width of all content
+        // Divide by 3 since we tripled the drinks array
+        singleSetWidthRef.current = scroller.scrollWidth / 3;
+      }
+    };
+
+    // Measure initially after render
+    measureWidth();
+
+    // Re-measure on resize to handle responsive changes
+    const resizeObserver = new ResizeObserver(measureWidth);
+    resizeObserver.observe(scroller);
 
     /**
      * SMOOTH SCROLLING LOGIC:
@@ -69,21 +93,12 @@ export default function InfiniteDrinksGallery({
         /**
          * SEAMLESS LOOP RESET:
          *
-         * Calculate the width of one complete set of drinks.
-         * When we've scrolled past this width, reset to 0.
-         * Since we have duplicates, this reset is invisible.
+         * Use the MEASURED width (not calculated) for precise reset.
+         * When we've scrolled past one complete set, reset to 0.
+         * Since we have triplicates, this reset is invisible.
          */
-        const firstChild = scroller.firstElementChild as HTMLElement;
-        if (firstChild) {
-          // Get total width of all items in the first set
-          const itemWidth = firstChild.offsetWidth;
-          const gap = 32; // 8 * 4 = 32px (gap-8 in Tailwind)
-          const singleSetWidth = (itemWidth + gap) * drinks.length;
-
-          // Reset position when we've scrolled one complete set
-          if (scrollPositionRef.current >= singleSetWidth) {
-            scrollPositionRef.current -= singleSetWidth;
-          }
+        if (scrollPositionRef.current >= singleSetWidthRef.current) {
+          scrollPositionRef.current -= singleSetWidthRef.current;
         }
 
         // Apply the scroll transform
@@ -102,6 +117,7 @@ export default function InfiniteDrinksGallery({
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      resizeObserver.disconnect();
     };
   }, [drinks.length, scrollSpeed, hoveredIndex]); // Re-run when these values change
 

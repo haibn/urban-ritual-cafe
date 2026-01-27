@@ -104,7 +104,7 @@ const DEMO_DRINKS: Drink[] = [
 export default function HomeSignatureDrinks() {
   return (
     <div>
-      <InfiniteDrinksGallery drinks={DEMO_DRINKS} scrollSpeed={150} />
+      <InfiniteDrinksGallery drinks={DEMO_DRINKS} scrollSpeed={250} />
     </div>
   );
 }
