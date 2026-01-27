@@ -24,51 +24,87 @@ type Drink = {
 // Demo data - boba/bubble tea drinks
 const DEMO_DRINKS: Drink[] = [
   {
-    name: 'Classic Milk Tea',
-    image: 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=400&h=500&fit=crop',
-    description: 'Creamy black tea with chewy tapioca pearls and a hint of sweetness',
+    name: 'House Milk Tea',
+    image: '/drinks/signature/house-milk-tea.png',
+    description:
+      'House blend of black teas with house cream. Creamy, malty and roasted flavor notes.',
   },
   {
-    name: 'Taro Delight',
-    image: 'https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=400&h=500&fit=crop',
-    description: 'Purple taro root blended with milk for a nutty, sweet flavor',
+    name: 'Creme Brulee',
+    image: '/drinks/signature/creme-brulee.png',
+    description:
+      'Housemade creme brûlée, honey boba, classic milk topped with crackling torched raw sugar.',
   },
   {
-    name: 'Matcha Madness',
-    image: 'https://images.unsplash.com/photo-1578899952107-9d9d6c4d5d5d?w=400&h=500&fit=crop',
-    description: 'Premium Japanese matcha with fresh milk and honey boba pearls',
+    name: 'Creme Brulee Milk Tea',
+    image: '/drinks/signature/creme-brulee-milk-tea.png',
+    description:
+      'A combination of our famous Creme Brulee with our House Milk Tea--it’s the best of both worlds.',
   },
   {
-    name: 'Brown Sugar Tiger',
-    image: 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=400&h=500&fit=crop',
-    description: 'Signature brown sugar stripes with fresh milk and tapioca',
+    name: 'Matcha Toffee',
+    image: '/drinks/signature/matcha-toffee.png',
+    description: 'Matcha green tea with classic milk and bite-sized housemade toffee brittle.',
   },
   {
-    name: 'Strawberry Bliss',
-    image: 'https://images.unsplash.com/photo-1546173159-315724a31696?w=400&h=500&fit=crop',
-    description: 'Fresh strawberries blended with creamy milk tea and popping boba',
+    name: 'Strawberry Milk Bar',
+    image: '/drinks/signature/strawberry-milk-bar.png',
+    description: 'Classic milk with housemade strawberry syrup.',
   },
   {
-    name: 'Thai Tea Dream',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400&h=500&fit=crop',
-    description: 'Aromatic Thai tea with condensed milk and crystal boba',
+    name: 'Mango Sticky Rice',
+    image: '/drinks/signature/mango-sticky-rice.png',
+    description: 'Mango with rice milk & coconut milk.',
   },
   {
-    name: 'Mango Paradise',
-    image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&h=500&fit=crop',
-    description: 'Tropical mango smoothie with coconut jelly and passion fruit',
+    name: 'Bae-Sil',
+    image: '/drinks/signature/bae-sil.png',
+    description: 'Strawberry basil lemonade with housemade strawberry syrup, basil, and lemon.',
   },
   {
-    name: 'Wintermelon Zen',
-    image: 'https://images.unsplash.com/photo-1587080266227-677cc2a4e76e?w=400&h=500&fit=crop',
-    description: 'Refreshing wintermelon tea with aloe vera and lychee jelly',
+    name: 'White Grape Yuzu',
+    image: '/drinks/signature/white-grape-yuzu.png',
+    description: 'White grape oolong with yuzu honey.',
+  },
+  {
+    name: 'Classic Brew',
+    image: '/drinks/signature/classic-brew.png',
+    description: 'Our house milk tea with a shot of cold brew coffee and our special house cream.',
+  },
+  {
+    name: 'The Cloud',
+    image: '/drinks/signature/the-cloud.png',
+    description:
+      'Dark roasted cold brew coffee locally roasted from Cat & Cloud in Santa Cruz. Creamy, sweet with notes of dark chocolate.',
+  },
+  {
+    name: 'Feed Me Ube!',
+    image: '/drinks/signature/feed-me-ube.png',
+    description:
+      'Ube Creme brulee, taro chunks, coconut milk, and a choice of rice milk or whole milk.',
+  },
+  {
+    name: 'White Grape Yuzu',
+    image: '/drinks/signature/white-grape-yuzu.png',
+    description: 'White grape oolong with yuzu honey.',
+  },
+  {
+    name: 'Hong Kong Milk Tea',
+    image: '/drinks/signature/hong-kong-milk-tea.png',
+    description:
+      'Our take on the Classic Hong Kong Milk Tea. Ours is made with a housemade blend of black teas with evaporated milk. Our tea is steeped and then chilled for maximum strength and flavor.',
+  },
+  {
+    name: 'Black Sesame Rice Ball',
+    image: '/drinks/signature/black-sesame-rice-ball.png',
+    description: 'Drinkable mochi, black sesame, & rice milk.',
   },
 ];
 
 export default function HomeSignatureDrinks() {
   return (
     <div>
-      <InfiniteDrinksGallery drinks={DEMO_DRINKS} scrollSpeed={300} />
+      <InfiniteDrinksGallery drinks={DEMO_DRINKS} scrollSpeed={150} />
     </div>
   );
 }

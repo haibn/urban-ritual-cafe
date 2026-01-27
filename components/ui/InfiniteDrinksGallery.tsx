@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 type Drink = {
   name: string;
@@ -105,12 +106,12 @@ export default function InfiniteDrinksGallery({
   }, [drinks.length, scrollSpeed, hoveredIndex]); // Re-run when these values change
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-pink-50 py-12">
+    <div className="relative w-full overflow-hidden py-12">
       {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 left-1/4 h-64 w-64 rounded-full bg-orange-200 blur-3xl"></div>
-        <div className="absolute right-1/4 bottom-10 h-64 w-64 rounded-full bg-pink-200 blur-3xl"></div>
-      </div>
+      {/* <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 left-1/4 h-64 w-64 rounded-full bg-blue-500 blur-3xl"></div>
+        <div className="absolute right-1/4 bottom-10 h-64 w-64 rounded-full bg-red-500 blur-3xl"></div>
+      </div> */}
 
       {/* Main scrolling container */}
       <div
@@ -136,14 +137,17 @@ export default function InfiniteDrinksGallery({
             {/* Drink card container */}
             <div className="relative flex flex-col items-center">
               {/* Image container with overlay */}
-              <div className="relative h-64 w-48 overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 group-hover:shadow-2xl md:h-80 md:w-60">
+              <div className="relative h-64 w-64 overflow-hidden rounded-2xl bg-white transition-all duration-300 group-hover:shadow-2xl md:h-80 md:w-80">
                 {/* Drink image */}
-                <img
+                <Image
                   src={drink.image}
                   alt={drink.name}
+                  width={500}
+                  height={500}
+                  sizes="(max-width: 768px) 256px, 320px"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  quality={50}
                 />
-
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
@@ -154,24 +158,30 @@ export default function InfiniteDrinksGallery({
                   Uses backdrop-blur for a modern glass-morphism effect.
                 */}
                 {hoveredIndex === index && (
-                  <div className="absolute right-0 bottom-0 left-0 transform bg-white/95 p-4 backdrop-blur-sm transition-all duration-300">
-                    <p className="font-['Merriweather'] text-xs leading-relaxed text-gray-700 md:text-sm">
-                      {drink.description}
-                    </p>
-                  </div>
+                  <>
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+                    {/* Text content */}
+                    <div className="absolute right-0 bottom-0 left-0 translate-y-4 transform p-6 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                      <p className="font-nunito text-md leading-relaxed text-white/95">
+                        {drink.description}
+                      </p>
+                    </div>
+                  </>
                 )}
 
                 {/* Decorative corner accent */}
-                <div className="absolute top-3 right-3 h-2 w-2 rotate-45 bg-orange-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="absolute top-3 right-3 h-2 w-2 rotate-45 bg-[#BE8F59] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
 
               {/* Drink name below image */}
               <div className="mt-4 text-center">
-                <h3 className="font-['Archivo_Black'] text-lg tracking-wide text-gray-800 transition-colors duration-300 group-hover:text-orange-600 md:text-xl">
+                <h3 className="font-nunito text-lg tracking-widest text-gray-800 transition-colors duration-300 group-hover:text-[#BE8F59] md:text-xl">
                   {drink.name}
                 </h3>
                 {/* Underline accent that grows on hover */}
-                <div className="mx-auto mt-2 h-0.5 w-0 bg-orange-400 transition-all duration-300 group-hover:w-full"></div>
+                <div className="mx-auto mt-2 h-0.5 w-0 bg-[#BE8F59] transition-all duration-300 group-hover:w-full"></div>
               </div>
             </div>
           </div>
@@ -181,11 +191,6 @@ export default function InfiniteDrinksGallery({
       {/* Fade edges for polished infinite scroll effect */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-amber-50 to-transparent"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-pink-50 to-transparent"></div>
-
-      {/* Google Fonts */}
-      <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Merriweather:wght@300;400&display=swap');
-      `}</style>
     </div>
   );
 }
