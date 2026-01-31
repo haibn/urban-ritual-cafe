@@ -122,7 +122,7 @@ export default function InfiniteDrinksGallery({
   }, [drinks.length, scrollSpeed, hoveredIndex]); // Re-run when these values change
 
   return (
-    <div className="relative w-full overflow-hidden py-12">
+    <div className="relative w-[99vw] overflow-hidden py-12">
       {/* Decorative background elements */}
       {/* <div className="absolute inset-0 opacity-30">
         <div className="absolute top-10 left-1/4 h-64 w-64 rounded-full bg-blue-500 blur-3xl"></div>
@@ -206,7 +206,7 @@ export default function InfiniteDrinksGallery({
 
       {/* Fade edges for polished infinite scroll effect */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-amber-50 to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-pink-50 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-amber-50 to-transparent"></div>
     </div>
   );
 }
