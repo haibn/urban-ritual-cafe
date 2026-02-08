@@ -25,10 +25,10 @@ export default function Button({
   return (
     <Link
       href={path}
-      className="font-urbanist inline-block rounded-xl px-6 py-3 font-semibold tracking-wider drop-shadow-2xl transition-colors duration-300"
+      className="font-urbanist inline-block rounded-xl px-6 py-3 font-semibold tracking-widest drop-shadow-2xl transition-colors duration-300"
       style={{
-        backgroundColor: isHovered ? `#${bgColorHovered}` : `#${bgColor}`,
-        color: isHovered ? `#${colorHovered}` : `#${color}`,
+        backgroundColor: isHovered ? bgColorHovered : bgColor,
+        color: isHovered ? colorHovered : color,
         fontSize: 'clamp(14px, 1.5vw, 20px)',
       }}
       onMouseEnter={() => setIsHovered(true)}

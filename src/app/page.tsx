@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Button from '../../components/ui/Button';
 import HomeSignatureDrinks from '../../components/sections/HomeSignatureDrinks';
 import Testimonial from '../../components/ui/Testimonial';
+import LocationCard from '../../components/ui/LocationCard';
 
 export default function Home() {
   return (
@@ -21,10 +22,10 @@ export default function Home() {
           <div className="absolute top-[14%] left-1/2 w-max -translate-x-1/2 flex-col justify-end justify-items-end">
             <div>
               <Button
-                bgColor="FF9500"
-                color="FFFFFF"
-                bgColorHovered="1E1E1E"
-                colorHovered="FFFFFF"
+                bgColor="#FF9500"
+                color="#FFFFFF"
+                bgColorHovered="#1E1E1E"
+                colorHovered="#FFFFFF"
                 text="VISIT US NOW!"
                 path="/locations"
               />
@@ -61,18 +62,18 @@ export default function Home() {
         {/* CTA Buttons - Centered with spacing */}
         <div className="flex items-center gap-3 px-4">
           <Button
-            bgColor="1E1E1E"
-            color="FFFFFF"
-            bgColorHovered="FF9500"
-            colorHovered="FFFFFF"
+            bgColor="#1E1E1E"
+            color="#FFFFFF"
+            bgColorHovered="#FF9500"
+            colorHovered="#FFFFFF"
             text="Order Now!"
             path="/locations"
           />
           <Button
-            bgColor="1E1E1E"
-            color="FFFFFF"
-            bgColorHovered="FF9500"
-            colorHovered="FFFFFF"
+            bgColor="#1E1E1E"
+            color="#FFFFFF"
+            bgColorHovered="#FF9500"
+            colorHovered="#FFFFFF"
             text="View Full Menu"
             path="/menu"
           />
@@ -80,34 +81,48 @@ export default function Home() {
       </section>
 
       {/* Our Story */}
-      <section className="flex w-full flex-col items-center justify-center bg-[#4B4B4B] py-20">
+      <section className="flex w-full flex-col items-center justify-center bg-[#4B4B4B] pt-20 pb-15">
         <h2 className="font-urbanist text-[61px] font-medium tracking-wide text-white uppercase">
           Our Story
         </h2>
+        <div className="w-[1160px]">
+          <br />
 
-        <br></br>
+          <p className="font-urbanist text-center text-[21px] leading-relaxed whitespace-pre-line text-white">
+            {
+              'Founded in 2018 in the heart of the San Francisco Bay Area, Urban Ritual was born from a \n simple idea: boba should be more than just a drink—it should be an experience.'
+            }
+          </p>
 
-        <p className="font-urbanist text-center text-[21px] leading-relaxed whitespace-pre-line text-white">
-          {
-            'Founded in 2018 in the heart of the San Francisco Bay Area, Urban Ritual was born from a \n simple idea: boba should be more than just a drink—it should be an experience.'
-          }
-        </p>
+          <br />
 
-        <br></br>
+          <p className="font-urbanist text-center text-[21px] leading-relaxed whitespace-pre-line text-white">
+            {
+              'Inspired by childhood favorites, world travels, and a drive for constant innovation, we set out to \n reimagine what boba could be. Every sip at Urban Ritual tells a story of nostalgia, adventure, \n and creativity.'
+            }
+          </p>
 
-        <p className="font-urbanist text-center text-[21px] leading-relaxed whitespace-pre-line text-white">
-          {
-            'Inspired by childhood favorites, world travels, and a drive for constant innovation, we set out to \n reimagine what boba could be. Every sip at Urban Ritual tells a story of nostalgia, adventure, \n and creativity.'
-          }
-        </p>
+          <br />
+          <p className="font-urbanist text-center text-[21px] leading-relaxed whitespace-pre-line text-white">
+            {
+              'At Urban Ritual, we believe that great boba brings people together. Every ingredient, every \n flavor, every drink is crafted with care, quality, and community at heart—making each visit to our \n cafés in San Francisco and San Mateo a memorable experience.'
+            }
+          </p>
 
-        <br></br>
+          <br />
+          <br />
 
-        <p className="font-urbanist text-center text-[21px] leading-relaxed whitespace-pre-line text-white">
-          {
-            'At Urban Ritual, we believe that great boba brings people together. Every ingredient, every \n flavor, every drink is crafted with care, quality, and community at heart—making each visit to our \n cafés in San Francisco and San Mateo a memorable experience.'
-          }
-        </p>
+          <div className="flex justify-end pr-[200px]">
+            <Button
+              bgColor="white"
+              color="black"
+              bgColorHovered="#FF9500"
+              colorHovered="black"
+              text="Learn More"
+              path="/story"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Collage */}
@@ -129,6 +144,7 @@ export default function Home() {
           <h2 className="font-urbanist text-[51px] font-normal tracking-wide">
             What our customers are saying ...
           </h2>
+          <br />
           <div className="flex flex-col items-center justify-center gap-15">
             <div className="flex flex-row items-center justify-center gap-15">
               <Testimonial
@@ -136,16 +152,16 @@ export default function Home() {
                 customerImage="/banners/customer-reik.png"
                 bgColor="black"
                 textColor="white"
-                width="w-[700px]"
-                height="h-54"
+                width="w-[43.75rem]"
+                height="h-[13.5rem]"
               />
               <Testimonial
                 text="Urban Ritual is probably one of the best boba shops in the area! I've never had a bad drink there...”"
                 customerImage="/banners/customer-nathan.png"
                 bgColor="black"
                 textColor="white"
-                width="w-[400px]"
-                height="h-54"
+                width="w-[25rem]"
+                height="h-[13.5rem]"
               />
             </div>
             <div className="flex flex-row items-center justify-center gap-15">
@@ -154,19 +170,52 @@ export default function Home() {
                 customerImage="/banners/customer-jenny.png"
                 bgColor="black"
                 textColor="white"
-                width="w-[400px]"
-                height="h-54"
+                width="w-[25rem]"
+                height="h-[13.5rem]"
               />
               <Testimonial
                 text="Really enjoy their drinks and variety! I ordered the toffee matcha latte with macadamia nut milk (yum)! Macadamia milk isn't a typical milk substitution offered at many places so I'm glad this is an option here ..."
                 customerImage="/banners/customer-judy.png"
                 bgColor="black"
                 textColor="white"
-                width="w-[700px]"
-                height="h-54"
+                width="w-[43.75rem]"
+                height="h-[13.5rem]"
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our Locations */}
+      <section className="flex flex-col items-center justify-center py-20">
+        <h2 className="font-urbanist text-[61px] font-medium tracking-wide uppercase">
+          Our Locations
+        </h2>
+
+        <br />
+
+        <div className="flex w-full flex-col items-center justify-center gap-15">
+          <LocationCard
+            locationName="San Francisco Cafe"
+            address="488 Fell St, San Francisco, CA 94102"
+            phone="415-374-7181"
+            bgColor="black"
+            textColor="white"
+            imageSrc="/pictures/sf-location.png"
+            width="72.5rem"
+            height="13.5rem"
+          />
+
+          <LocationCard
+            locationName="San Mateo Cafe"
+            address="140 S B St, San Mateo, CA 94401"
+            phone="650-458-3298"
+            bgColor="black"
+            textColor="white"
+            imageSrc="/pictures/san-mateo-location.png"
+            width="72.5rem"
+            height="13.5rem"
+          />
         </div>
       </section>
     </div>

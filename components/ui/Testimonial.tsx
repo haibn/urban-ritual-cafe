@@ -33,7 +33,7 @@ export default function Testimonial({
 }: TestimonialProps) {
   return (
     <div
-      className={`relative mx-auto overflow-visible rounded-4xl shadow-2xl ${width} ${height}`}
+      className={`relative mx-auto overflow-visible rounded-4xl shadow-2xl max-${width} max-${height}`}
       style={{ backgroundColor: bgColor }}
     >
       {/* Testimonial text with padding to avoid collision with image */}
