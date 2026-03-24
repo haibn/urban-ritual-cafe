@@ -11,6 +11,7 @@ export interface LocationCardProps {
   imageSrc: string;
   width?: string;
   height?: string;
+  buttonText?: string;
 }
 
 /**
@@ -35,6 +36,7 @@ export default function LocationCard({
   imageSrc,
   width, // Default: 1160px (72.5rem)
   height,
+  buttonText,
 }: LocationCardProps) {
   return (
     <div className={`relative w-full ${height ? '' : 'h-auto'}`} style={{ maxWidth: width }}>
@@ -95,7 +97,7 @@ export default function LocationCard({
               color="#FFFFFF"
               bgColorHovered="white"
               colorHovered="black"
-              text="VISIT US NOW!"
+              text={buttonText || "VISIT US NOW!"}
               path="/locations"
             />
           </div>
