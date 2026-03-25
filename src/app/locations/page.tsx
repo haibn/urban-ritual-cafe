@@ -33,12 +33,12 @@ export default function Locations() {
   return (
     <div>
       {/* Hero */}
-      <section className="flex justify-center px-5 pt-16 pb-8 lg:px-[74px] lg:pt-[140px] lg:pb-16">
+      <section className="flex justify-center px-5 pt-16 pb-8 lg:px-[74px] lg:pt-[60px] lg:pb-16">
         <div className="flex h-[300px] w-full max-w-[1294px] flex-col items-center justify-center rounded-[30px] bg-[#4B4B4B] sm:h-[400px] lg:h-[686px] lg:rounded-[50px]">
-          <p className="font-petit text-[40px] lowercase text-[#FF9500] tracking-[3px] sm:text-[60px] lg:text-[90px]">
+          <p className="font-petit text-[40px] tracking-[3px] text-[#FF9500] lowercase sm:text-[60px] lg:text-[90px]">
             urban ritual
           </p>
-          <h1 className="font-urbanist text-[50px] font-medium leading-none tracking-[3px] text-white uppercase sm:text-[75px] lg:text-[115px]">
+          <h1 className="font-urbanist text-[50px] leading-none font-medium tracking-[3px] text-white uppercase sm:text-[75px] lg:text-[115px]">
             LOCATIONS
           </h1>
         </div>
@@ -59,7 +59,7 @@ export default function Locations() {
       {/* Our Locations */}
       <section className="flex flex-col items-center px-5 py-4 lg:px-20 lg:py-8">
         <div className="w-full max-w-[1280px]">
-          <h2 className="font-urbanist mb-6 text-3xl font-medium leading-[1.5] text-black uppercase lg:mb-10 lg:pl-[71px] lg:text-[61px]">
+          <h2 className="font-urbanist mb-6 text-3xl leading-[1.5] font-medium text-black uppercase lg:mb-10 lg:pl-[71px] lg:text-[61px]">
             OUR LOCATIONS
           </h2>
 
@@ -82,7 +82,7 @@ export default function Locations() {
 
                 {/* Info */}
                 <div className="flex flex-1 flex-col gap-4 px-6 py-6 lg:gap-0 lg:p-0">
-                  <h3 className="font-urbanist text-2xl font-medium capitalize text-[#FF9500] lg:text-[47px] lg:leading-[1.5]">
+                  <h3 className="font-urbanist text-2xl font-medium text-[#FF9500] capitalize lg:text-[47px] lg:leading-[1.5]">
                     {loc.name}
                   </h3>
 

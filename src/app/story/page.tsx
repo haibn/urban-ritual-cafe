@@ -14,17 +14,17 @@ export default function Story() {
       <section className="flex justify-center px-10 pt-16 pb-10 lg:px-20 lg:pt-[140px] lg:pb-20">
         <div className="flex w-full max-w-[1280px] flex-col-reverse items-center gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="text-center lg:text-left">
-            <h1 className="font-urbanist text-[36px] font-medium leading-[1.1] tracking-widest text-black uppercase sm:text-[50px] lg:text-[90px]">
+            <h1 className="font-urbanist text-[36px] leading-[1.1] font-medium tracking-widest text-black uppercase sm:text-[50px] lg:text-[90px]">
               Redefining
             </h1>
-            <h1 className="font-urbanist text-[36px] font-medium leading-[1.1] tracking-widest text-black uppercase sm:text-[50px] lg:text-[90px]">
-              Boba &amp; Coffee in
+            <h1 className="font-urbanist text-[36px] leading-[1.1] font-medium tracking-widest text-black uppercase sm:text-[50px] lg:text-[90px]">
+              Boba &amp; Coffee
             </h1>
             <div className="flex items-baseline justify-center gap-2 lg:justify-start lg:gap-4">
-              <h1 className="font-urbanist text-[36px] font-medium leading-[1.1] tracking-widest text-black uppercase sm:text-[50px] lg:text-[90px]">
-                the
+              <h1 className="font-urbanist text-[36px] leading-[1.1] font-medium tracking-widest text-black uppercase sm:text-[50px] lg:text-[90px]">
+                in the
               </h1>
-              <span className="font-petit text-[32px] lowercase text-[#FF9500] sm:text-[46px] lg:text-[90px]">
+              <span className="font-petit text-[32px] text-[#FF9500] lowercase sm:text-[46px] lg:text-[90px]">
                 bay area
               </span>
             </div>
@@ -35,7 +35,7 @@ export default function Story() {
               alt="Urban Ritual team"
               fill
               sizes="(max-width: 1024px) 100vw, 440px"
-              className="object-cover"
+              className="object-cover object-bottom"
               priority
             />
           </div>
@@ -55,7 +55,7 @@ export default function Story() {
       <section className="flex justify-center px-10 py-10 lg:px-20 lg:py-20">
         <div className="flex w-full max-w-[1160px] flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
           <div className="order-2 lg:order-1 lg:flex-1">
-            <h2 className="font-urbanist mb-8 text-3xl font-medium leading-[1.5] tracking-wide text-black uppercase lg:text-[61px]">
+            <h2 className="font-urbanist mb-8 text-3xl leading-[1.5] font-medium tracking-wide text-black uppercase lg:text-[61px]">
               OUR STORY
             </h2>
             <div className="font-nunito space-y-6 text-base leading-relaxed tracking-tight text-black lg:text-[27px] lg:leading-[1.5]">
@@ -66,9 +66,9 @@ export default function Story() {
                 telling a story of nostalgia, adventure, and discovery.
               </p>
               <p>
-                Our inspiration comes from childhood favorites, global travel experiences, and a love
-                for experimenting with bold, unexpected flavors. From San Francisco to San Mateo,
-                Urban Ritual continues to grow as a place where tradition meets innovation.
+                Our inspiration comes from childhood favorites, global travel experiences, and a
+                love for experimenting with bold, unexpected flavors. From San Francisco to San
+                Mateo, Urban Ritual continues to grow as a place where tradition meets innovation.
               </p>
             </div>
           </div>
@@ -114,8 +114,8 @@ export default function Story() {
               signature cream blends bring out unforgettable flavors.
             </li>
             <li>
-              <strong>Community Roots:</strong> With cafes in San Francisco and San Mateo, we&apos;re
-              proud to be part of the Bay Area&apos;s diverse and vibrant culture.
+              <strong>Community Roots:</strong> With cafes in San Francisco and San Mateo,
+              we&apos;re proud to be part of the Bay Area&apos;s diverse and vibrant culture.
             </li>
             <li>
               <strong>Beyond the Cup:</strong> Our innovative boba pouches let you take Urban Ritual
@@ -128,7 +128,7 @@ export default function Story() {
       {/* Our Mission & Values */}
       <section className="flex w-full justify-center bg-[#4B4B4B] px-10 py-16 shadow-[3px_3px_8px_0px_rgba(0,0,0,0.25)] lg:px-20 lg:py-24">
         <div className="w-full max-w-[1160px] text-center">
-          <h2 className="font-urbanist mb-10 text-2xl font-medium capitalize text-white lg:text-[47px]">
+          <h2 className="font-urbanist mb-10 text-2xl font-medium text-white capitalize lg:text-[47px]">
             Our Mission &amp; Values
           </h2>
           <p className="font-nunito mx-auto mb-10 max-w-[1136px] text-base leading-relaxed tracking-tight text-white lg:text-[27px] lg:leading-[1.5]">
@@ -179,14 +179,14 @@ export default function Story() {
             />
           </div>
           <p className="font-nunito mt-10 text-center text-xs leading-relaxed tracking-tight text-black lg:text-[16px] lg:leading-[1.5]">
-            Urban Ritual is a boba tea and coffee shop with locations in San Francisco and San Mateo,
-            CA. Since 2018, we&apos;ve specialized in handcrafted milk teas, matcha drinks, specialty
-            coffee, and innovative boba creations. Our menu features favorites like House Milk Tea,
-            Matcha Toffee, and Strawberry Milk Bar, along with our convenient boba pouches. If
-            you&apos;re searching for the best boba in the Bay Area, Urban Ritual delivers a modern
-            take on tradition, blending high-quality ingredients with creative recipes. Visit us in
-            San Francisco or San Mateo and experience why Urban Ritual is one of the most loved boba
-            cafes in Northern California.
+            Urban Ritual is a boba tea and coffee shop with locations in San Francisco and San
+            Mateo, CA. Since 2018, we&apos;ve specialized in handcrafted milk teas, matcha drinks,
+            specialty coffee, and innovative boba creations. Our menu features favorites like House
+            Milk Tea, Matcha Toffee, and Strawberry Milk Bar, along with our convenient boba
+            pouches. If you&apos;re searching for the best boba in the Bay Area, Urban Ritual
+            delivers a modern take on tradition, blending high-quality ingredients with creative
+            recipes. Visit us in San Francisco or San Mateo and experience why Urban Ritual is one
+            of the most loved boba cafes in Northern California.
           </p>
         </div>
       </section>

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../../components/ui/Button';
 import HomeSignatureDrinks from '../../components/sections/HomeSignatureDrinks';
+import ContactForm from '../../components/sections/ContactForm';
 import Testimonial from '../../components/ui/Testimonial';
 import LocationCard from '../../components/ui/LocationCard';
 
@@ -226,7 +227,12 @@ export default function Home() {
           <div className="flex w-full flex-col pb-10 lg:-mt-16 lg:w-1/2 lg:pr-12 lg:pb-20">
             {/* Top-left image overlapping upwards */}
             <div className="relative mb-8 h-[250px] w-full overflow-hidden rounded-2xl shadow-2xl sm:h-[350px] lg:mb-10 lg:h-[450px] lg:rounded-[3rem]">
-              <Image src="/pictures/catering.png" alt="Catering" fill className="object-cover" />
+              <Image
+                src="/pictures/catering.png"
+                alt="Catering"
+                fill
+                className="object-cover object-center"
+              />
             </div>
 
             {/* How it works Text */}
@@ -305,56 +311,15 @@ export default function Home() {
             {/* Left Image - hidden on mobile */}
             <div className="relative hidden h-full bg-white lg:block lg:w-1/2">
               <Image
-                src="/pictures/diana-contact-form.png"
-                alt="Contact Us"
+                src="/contact/45dd10da41b52928b072548e6f3eb8ad15a3a0fc.png"
+                alt="Urban Ritual customer enjoying a drink"
                 fill
                 className="object-cover object-top"
               />
             </div>
 
             {/* Right Form */}
-            <div className="flex w-full flex-col justify-center bg-black p-8 text-white lg:w-1/2 lg:p-16">
-              <h3 className="font-urbanist mb-8 text-2xl font-light tracking-wide lg:mb-10 lg:text-[42px]">
-                Contact Form
-              </h3>
-              <form className="flex w-full flex-col gap-6 lg:gap-8">
-                <div>
-                  <label className="font-nunito mb-2 block text-sm text-gray-200">Name:</label>
-                  <input
-                    type="text"
-                    className="h-[48px] w-full rounded-full bg-white px-5 text-lg text-black focus:ring-2 focus:ring-[#FF9500] focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="font-nunito mb-2 block text-sm text-gray-200">Email:</label>
-                  <input
-                    type="email"
-                    className="h-[48px] w-full rounded-full bg-white px-5 text-lg text-black focus:ring-2 focus:ring-[#FF9500] focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label className="font-nunito mb-2 block text-sm text-gray-200">Subject:</label>
-                  <input
-                    type="text"
-                    className="h-[48px] w-full rounded-full bg-white px-5 text-lg text-black focus:ring-2 focus:ring-[#FF9500] focus:outline-none"
-                  />
-                </div>
-                <div className="flex-1">
-                  <label className="font-nunito mb-2 block text-sm text-gray-200">Message:</label>
-                  <textarea className="h-[160px] w-full resize-none rounded-2xl bg-white p-5 text-lg text-black focus:ring-2 focus:ring-[#FF9500] focus:outline-none"></textarea>
-                </div>
-                <div className="mt-4 flex justify-end">
-                  <Button
-                    bgColor="#FF9500"
-                    color="#FFFFFF"
-                    bgColorHovered="white"
-                    colorHovered="black"
-                    text="Submit"
-                    path="#"
-                  />
-                </div>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
