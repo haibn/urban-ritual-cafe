@@ -7,7 +7,6 @@ interface TestimonialProps {
   bgColor: string;
   textColor: string;
   width: string;
-  height: string;
 }
 
 /**
@@ -29,11 +28,10 @@ export default function Testimonial({
   bgColor,
   textColor,
   width,
-  height,
 }: TestimonialProps) {
   return (
     <div
-      className={`relative mx-auto overflow-visible rounded-4xl shadow-2xl max-${width} max-${height}`}
+      className={`relative mx-auto overflow-visible rounded-4xl shadow-2xl ${width} h-full`}
       style={{ backgroundColor: bgColor }}
     >
       {/* Testimonial text with padding to avoid collision with image */}

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[890px] w-full">
+      <section className="relative h-[100vh] lg:h-[890px] w-full min-h-[600px]">
         <Image
           src={'/banners/home-page-hero-large.jpg'}
           alt="Home Page"
@@ -146,15 +146,14 @@ export default function Home() {
             What our customers are saying ...
           </h2>
           <br />
-          <div className="flex flex-col items-center justify-center gap-15">
-            <div className="flex flex-row items-center justify-center gap-15">
+          <div className="grid auto-rows-[1fr] justify-center gap-15">
+            <div className="grid grid-cols-[43.75rem_25rem] gap-15 h-full">
               <Testimonial
                 text="I've been here about four times already, and it's hands-down my favorite bubble tea spot in San Francisco. The Honey Boba topping is an absolute must--seriously, don't skip it! Their pearls are perfectly chewy and, in my opinion, the best in town ..."
                 customerImage="/banners/customer-reik.png"
                 bgColor="black"
                 textColor="white"
                 width="w-[43.75rem]"
-                height="h-[13.5rem]"
               />
               <Testimonial
                 text="Urban Ritual is probably one of the best boba shops in the area! I've never had a bad drink there...”"
@@ -162,17 +161,15 @@ export default function Home() {
                 bgColor="black"
                 textColor="white"
                 width="w-[25rem]"
-                height="h-[13.5rem]"
               />
             </div>
-            <div className="flex flex-row items-center justify-center gap-15">
+            <div className="grid grid-cols-[25rem_43.75rem] gap-15 h-full">
               <Testimonial
                 text="My favorite boba in SF! All their drinks are so unique and well balanced.”"
                 customerImage="/banners/customer-jenny.png"
                 bgColor="black"
                 textColor="white"
                 width="w-[25rem]"
-                height="h-[13.5rem]"
               />
               <Testimonial
                 text="Really enjoy their drinks and variety! I ordered the toffee matcha latte with macadamia nut milk (yum)! Macadamia milk isn't a typical milk substitution offered at many places so I'm glad this is an option here ..."
@@ -180,7 +177,6 @@ export default function Home() {
                 bgColor="black"
                 textColor="white"
                 width="w-[43.75rem]"
-                height="h-[13.5rem]"
               />
             </div>
           </div>
@@ -289,12 +285,14 @@ export default function Home() {
           {/* Two column top text */}
           <div className="mb-12 flex w-full gap-12">
             <div className="flex w-1/2 items-start justify-end pr-4">
-              <h2 className="font-urbanist text-right text-[51px] leading-[1.1] tracking-wide text-black">
+              <h2 className="font-urbanist text-right text-[53px] leading-[1.1] tracking-wide text-black">
                 Have questions,
                 <br />
-                feedback, or ideas? We'd
+                feedback, or ideas?
                 <br />
-                love to hear from you!
+                We'd love to hear
+                <br />
+                from you!
               </h2>
             </div>
             <div className="flex w-1/2 items-center pl-4">
@@ -312,7 +310,7 @@ export default function Home() {
                 src="/pictures/diana-contact-form.png"
                 alt="Contact Us"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
 
