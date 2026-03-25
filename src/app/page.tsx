@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[100vh] min-h-[600px] w-full lg:h-[890px]">
+      <section className="relative h-[75vh] min-h-[480px] w-full sm:h-[90vh] sm:min-h-[600px] lg:h-[890px]">
         <Image
           src={'/banners/home-page-hero-large.jpg'}
           alt="Home Page"
@@ -21,8 +21,9 @@ export default function Home() {
         />
 
         <div className="relative z-10 h-full">
-          <div className="absolute inset-x-0 top-[14%] flex flex-col items-center px-10 text-center lg:right-auto lg:left-1/2 lg:w-max lg:-translate-x-1/2 lg:items-end lg:px-0 lg:text-right">
-            <div className="order-last mt-6 lg:order-first lg:mt-0">
+          {/* Desktop layout: text + button grouped together */}
+          <div className="absolute inset-x-0 top-[14%] hidden lg:right-auto lg:left-1/2 lg:flex lg:w-max lg:-translate-x-1/2 lg:flex-col lg:items-end lg:text-right">
+            <div>
               <Button
                 bgColor="#FF9500"
                 color="#FFFFFF"
@@ -32,16 +33,43 @@ export default function Home() {
                 path="/locations"
               />
             </div>
-            <h1 className="font-urbanist text-[32px] tracking-widest text-white sm:text-[42px] lg:text-[66.4px]">
+            <h1 className="font-urbanist text-[66.4px] leading-tight tracking-widest text-white">
               CRAFTING UNFORGETTABLE
             </h1>
-            <div className="-mt-3 flex items-center lg:-mt-9">
-              <h1 className="font-petit mr-3 text-[30px] text-[#FFC787] sm:text-[40px] lg:mr-6 lg:text-[62px]">
-                boba
-              </h1>
-              <h1 className="font-urbanist text-[30px] tracking-widest text-white sm:text-[40px] lg:text-[62px]">
+            <div className="-mt-9 flex items-baseline justify-end">
+              <h1 className="font-petit mr-6 text-[62px] text-[#FFC787]">boba</h1>
+              <h1 className="font-urbanist text-[62px] tracking-widest text-white">
                 EXPERIENCES EVERYDAY
               </h1>
+            </div>
+          </div>
+
+          {/* Mobile/Tablet layout: text above drinks, button below drinks */}
+          <div className="h-full lg:hidden">
+            {/* Text: positioned above the drinks */}
+            <div className="absolute inset-x-0 top-[14%] px-5 text-center min-[412px]:top-[18%] sm:top-[20%] sm:px-10">
+              <h1 className="font-urbanist text-[5.6vw] leading-tight tracking-[0.04em] text-white min-[412px]:text-[26px] min-[412px]:tracking-[0.08em] sm:text-[42px] sm:tracking-widest">
+                CRAFTING UNFORGETTABLE
+              </h1>
+              <div className="-mt-1 flex flex-wrap items-baseline justify-center sm:-mt-3">
+                <h1 className="font-petit mr-2 text-[5.2vw] text-[#FFC787] min-[412px]:text-[24px] sm:mr-3 sm:text-[40px]">
+                  boba
+                </h1>
+                <h1 className="font-urbanist text-[5.2vw] tracking-[0.04em] text-white min-[412px]:text-[24px] min-[412px]:tracking-[0.08em] sm:text-[40px] sm:tracking-widest">
+                  EXPERIENCES EVERYDAY
+                </h1>
+              </div>
+            </div>
+            {/* Button: at the bottom, below the drinks */}
+            <div className="absolute inset-x-0 bottom-[5%] flex justify-center sm:bottom-[6%]">
+              <Button
+                bgColor="#FF9500"
+                color="#FFFFFF"
+                bgColorHovered="#1E1E1E"
+                colorHovered="#FFFFFF"
+                text="VISIT US NOW!"
+                path="/locations"
+              />
             </div>
           </div>
         </div>

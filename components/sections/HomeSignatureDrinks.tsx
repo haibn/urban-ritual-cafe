@@ -103,7 +103,7 @@ const DEMO_DRINKS: Drink[] = [
 
 export default function HomeSignatureDrinks() {
   return (
-    <div>
+    <div className="w-full overflow-hidden">
       <InfiniteDrinksGallery drinks={DEMO_DRINKS} scrollSpeed={250} />
     </div>
   );
