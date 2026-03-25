@@ -35,14 +35,14 @@ export default function Testimonial({
       style={{ backgroundColor: bgColor }}
     >
       {/* Testimonial text with padding to avoid collision with image */}
-      <div className="flex h-full flex-col justify-center px-12 py-12 pr-12">
-        <blockquote className="text-xl leading-relaxed font-medium" style={{ color: textColor }}>
+      <div className="flex h-full flex-col justify-center px-6 py-8 lg:px-12 lg:py-12">
+        <blockquote className="text-base leading-relaxed font-medium lg:text-xl" style={{ color: textColor }}>
           &ldquo;{text}&rdquo;
         </blockquote>
       </div>
 
       {/* Customer image - bottom-right corner, partially outside card */}
-      <div className="absolute -right-8 -bottom-8">
+      <div className="absolute -right-4 -bottom-4 lg:-right-8 lg:-bottom-8">
         <div className="relative">
           {/* Intrinsic sizing - image maintains natural aspect ratio */}
           <Image
@@ -50,8 +50,8 @@ export default function Testimonial({
             alt="Customer testimonial"
             width={200}
             height={79}
-            sizes="200px"
-            className="rounded-xl"
+            sizes="(max-width: 1024px) 130px, 200px"
+            className="w-[130px] rounded-xl lg:w-[200px]"
           />
         </div>
       </div>

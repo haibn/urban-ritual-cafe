@@ -3,55 +3,81 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Navbar() {
-  const pathname = usePathname(); // gives current path, e.g., "/blog"
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const links = [
+    { href: '/menu', label: 'MENU' },
+    { href: '/story', label: 'STORY' },
+    { href: '/locations', label: 'LOCATIONS' },
+    { href: '/catering', label: 'CATERING' },
+    { href: '/contact', label: 'CONTACT' },
+  ];
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between bg-white text-xl font-medium tracking-wide shadow-md">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-white px-10 text-xl font-medium tracking-wide shadow-md lg:px-20">
       <Link
         href="/"
-        className={`font-urbanist py-4 pl-20 ${pathname === '/' ? 'text-[#BE8F59]' : ''}`}
+        className={`font-urbanist py-4 ${pathname === '/' ? 'text-[#BE8F59]' : ''}`}
       >
         <Image
           src={'/logos/urban-ritual-logo.png'}
           alt="Home"
           width={330}
           height={330 / (186 / 1254)}
-          className="h-auto"
+          className="h-auto max-w-[180px] lg:max-w-none"
         />
       </Link>
-      <div className="flex space-x-6 py-4 pr-20">
-        <Link
-          href="/menu"
-          className={`font-urbanist ${pathname === '/menu' ? 'text-[#BE8F59]' : ''}`}
-        >
-          MENU
-        </Link>
-        <Link
-          href="/story"
-          className={`font-urbanist ${pathname === '/story' ? 'text-[#BE8F59]' : ''}`}
-        >
-          STORY
-        </Link>
-        <Link
-          href="/locations"
-          className={`font-urbanist ${pathname === '/locations' ? 'text-[#BE8F59]' : ''}`}
-        >
-          LOCATIONS
-        </Link>
-        <Link
-          href="/catering"
-          className={`font-urbanist ${pathname === '/catering' ? 'text-[#BE8F59]' : ''}`}
-        >
-          CATERING
-        </Link>
-        <Link
-          href="/contact"
-          className={`font-urbanist ${pathname === '/contact' ? 'text-[#BE8F59]' : ''}`}
-        >
-          CONTACT
-        </Link>
+
+      {/* Desktop links */}
+      <div className="hidden space-x-6 py-4 lg:flex">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`font-urbanist ${pathname === link.href ? 'text-[#BE8F59]' : ''}`}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+
+      {/* Mobile hamburger button */}
+      <button
+        className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[6px] lg:hidden"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+      >
+        <span
+          className={`h-[2px] w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'translate-y-[8px] rotate-45' : ''}`}
+        />
+        <span
+          className={`h-[2px] w-6 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}
+        />
+        <span
+          className={`h-[2px] w-6 bg-black transition-all duration-300 ${isMenuOpen ? '-translate-y-[8px] -rotate-45' : ''}`}
+        />
+      </button>
+
+      {/* Mobile fullscreen overlay menu */}
+      <div
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white transition-all duration-500 ease-in-out lg:hidden ${isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+      >
+        <div className="flex flex-col items-center gap-10">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`font-urbanist text-2xl font-medium tracking-[0.2em] transition-colors duration-200 ${pathname === link.href ? 'text-[#BE8F59]' : 'text-black'}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
   );

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import { MapPin, Phone } from 'lucide-react';
 import Button from './Button';
 
 export interface LocationCardProps {
@@ -39,31 +38,35 @@ export default function LocationCard({
   buttonText,
 }: LocationCardProps) {
   return (
-    <div className={`relative w-full ${height ? '' : 'h-auto'}`} style={{ maxWidth: width }}>
-      {/* Overlapping location image - positioned at top-right */}
-      <div className="absolute -top-8 -right-10 z-10">
+    <div className="relative w-full h-auto" style={{ maxWidth: width }}>
+      {/* Overlapping location image - desktop only */}
+      <div className="absolute -top-8 -right-10 z-10 hidden lg:block">
         <div className="relative h-37 w-52 overflow-hidden rounded-xl">
           <Image src={imageSrc} alt={locationName} fill className="object-cover" sizes="192px" />
         </div>
       </div>
 
+      {/* Mobile inline location image */}
+      <div className="relative h-[180px] w-full overflow-hidden rounded-t-3xl lg:hidden">
+        <Image src={imageSrc} alt={locationName} fill className="object-cover" sizes="100vw" />
+      </div>
+
       {/* Main card container */}
       <div
-        className={`rounded-4xl px-8 py-8 pt-10 shadow-lg ${height ? '' : 'h-auto'}`}
+        className={`rounded-b-3xl px-6 py-6 shadow-lg lg:rounded-4xl lg:px-8 lg:py-8 lg:pt-10 ${height ? 'h-auto lg:h-[13.5rem]' : 'h-auto'}`}
         style={{
           backgroundColor: bgColor,
           color: textColor,
-          ...(height && { height }),
         }}
       >
-        <div className="flex h-full items-center justify-between gap-8">
+        <div className="flex flex-col items-start gap-4 lg:flex-row lg:h-full lg:items-center lg:justify-between lg:gap-8">
           {/* Left side - Location information */}
-          <div className="flex-1 space-y-4 pl-10">
+          <div className="flex-1 space-y-3 pl-2 lg:space-y-4 lg:pl-10">
             {/* Location name */}
-            <h3 className="font-nunito text-2xl font-bold">{locationName}</h3>
+            <h3 className="font-nunito text-xl font-bold lg:text-2xl">{locationName}</h3>
 
             {/* Address and phone with icons */}
-            <div className="space-y-2 pl-2">
+            <div className="space-y-2 pl-1 lg:pl-2">
               {/* Address line */}
               <div className="flex items-start gap-3">
                 <Image
@@ -73,7 +76,7 @@ export default function LocationCard({
                   height={20}
                   sizes="20px"
                 />
-                <p className="font-nunito text-medium text-lg leading-relaxed">{address}</p>
+                <p className="font-nunito text-medium text-base leading-relaxed lg:text-lg">{address}</p>
               </div>
 
               {/* Phone line */}
@@ -85,13 +88,13 @@ export default function LocationCard({
                   height={20}
                   sizes="20px"
                 />
-                <p className="text-medium text-lg">{phone}</p>
+                <p className="text-medium text-base lg:text-lg">{phone}</p>
               </div>
             </div>
           </div>
 
           {/* Right side - CTA button */}
-          <div className="flex items-center pr-42">
+          <div className="flex w-full items-center justify-center lg:w-auto lg:justify-start lg:pr-42">
             <Button
               bgColor="#FF9500"
               color="#FFFFFF"

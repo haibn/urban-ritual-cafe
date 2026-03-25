@@ -12,7 +12,7 @@ const urbanist = Urbanist({
 const nunitoSans = Nunito_Sans({
   variable: '--font-nunito-sans',
   subsets: ['latin'],
-  weight: ['400'], // Specify the weights you need (Petit Formal Script only has 400)
+  weight: ['400', '700'],
   display: 'swap', // 'swap' is recommended to avoid layout shifts
 });
 
