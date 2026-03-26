@@ -17,120 +17,120 @@ type DrinkItem = {
 const SPECIALITIES: DrinkItem[] = [
   {
     name: 'House Milk Tea',
-    image: '/menu/1893a2c70bafdcbc01026213f48b80baed6c5cc1.png',
+    image: '/menu/house-milk-tea.png',
     description:
       'House blend of black teas with house cream. Creamy, malty and roasted flavor notes.',
   },
   {
     name: 'Creme Brulee',
-    image: '/menu/e25043030b6ff7e06e4b242adfae942e40b61230.png',
+    image: '/menu/creme-brulee.png',
     description:
       'Housemade creme brûlée, honey boba, classic milk topped with crackling torched raw sugar.',
   },
   {
     name: 'Creme Brulee Milk Tea',
-    image: '/menu/3150737d88bbaf9fe84deff0574762ca9de27b70.png',
+    image: '/menu/creme-brulee-milk-tea.png',
     description:
       "A combination of our famous Creme Brulee with our House Milk Tea--it's the best of both worlds.",
   },
   {
     name: 'Matcha Toffee',
-    image: '/menu/2bf3f0d29e1b3bbc895b1abd616a29d91cd80a8e.png',
+    image: '/menu/matcha-toffee.png',
     description: 'Matcha green tea with classic milk and bite-sized housemade toffee brittle.',
   },
   {
     name: 'Strawberry Milk Bar',
-    image: '/menu/de4a0a68763ae7697a33f2a3219d8c6afdb7379a.png',
+    image: '/menu/strawberry-milk-bar.png',
     description: 'Classic milk with housemade strawberry syrup.',
   },
   {
     name: 'Mango Sticky Rice',
-    image: '/menu/9fd68bac6864664a0a265adf21bbac6f8275531d.png',
+    image: '/menu/mango-sticky-rice.png',
     description: 'Mango with rice milk & coconut milk.',
   },
   {
     name: 'Bae-Sil',
-    image: '/menu/664648a8e87fb2f275f2567cc74b26b0d2128361.png',
+    image: '/menu/bae-sil.png',
     description: 'Strawberry basil lemonade with housemade strawberry syrup, basil, and lemon.',
   },
   {
     name: 'White Grape Yuzu',
-    image: '/menu/3e798379c7ec00dddac76e9b9afd5eed897cff53.png',
+    image: '/menu/white-grape-yuzu.png',
     description: 'White grape oolong with yuzu honey.',
   },
   {
     name: 'Lychee IPA',
-    image: '/menu/772738332cdd68cbe7bec2e664fd82e9442de392.png',
+    image: '/menu/lychee-ipa.png',
     description: 'Housemade NON-ALCOHOLIC version with lychee & citrus hops.',
   },
   {
     name: 'Classic Brew',
-    image: '/menu/ef33c3aa3e2c3de71a300f1cadc7f653119b6991.png',
+    image: '/menu/classic-brew.png',
     description: 'Our house milk tea with a shot of cold brew coffee and our special house cream.',
   },
   {
     name: 'The Cloud',
-    image: '/menu/a8154e8912661a20ae0372044553fdbc9647ac48.png',
+    image: '/menu/the-cloud.png',
     description:
       'Dark roasted cold brew coffee locally roasted from Cat & Cloud in Santa Cruz. Creamy, sweet with notes of dark chocolate.',
   },
   {
     name: 'Feed Me Ube!',
-    image: '/menu/31ca7b49e191ab75081ae41a4bfa75310423eeea.png',
+    image: '/menu/feed-me-ube.png',
     description:
       'Ube Creme brulee, taro chunks, coconut milk, and a choice of rice milk or whole milk.',
   },
   {
     name: 'Hong Kong Milk Tea',
-    image: '/menu/cc1db155c0a2b44af4db165ea858e336ac2c550f.png',
+    image: '/menu/hong-kong-milk-tea.png',
     description:
       'Our take on the Classic Hong Kong Milk Tea. Ours is made with a housemade blend of black teas with evaporated milk. Our tea is steeped and then chilled for maximum strength and flavor.',
   },
   {
     name: 'Black Sesame Rice Ball',
-    image: '/menu/efded0881a7ee347ba15e313ce88f15020e08958.png',
+    image: '/menu/black-sesame-rice-ball.png',
     description: 'Drinkable mochi, black sesame, & rice milk.',
   },
 ];
 
 const EVERYDAY_CLASSICS: DrinkItem[] = [
-  { name: 'Matcha Green Tea', image: '/menu/8cc72d86cee9100e41e991b17b41491e129a2949.png' },
-  { name: 'White Grape Oolong', image: '/menu/5276559704865181beff1a69fa85045e11c11fb3.png' },
-  { name: 'Chrysanthemum Tea', image: '/menu/338c5c8bab8e8aa253f8972b7b37fe822ec262df.png' },
-  { name: 'Thai Tea', image: '/menu/7e4c56e78efe5f1d0425682d4c4a01c69cf32c83.png' },
-  { name: 'Hibiscus Tea', image: '/menu/1cd3cf1ca2830678736df7d2f9b3802213ff226d.png' },
-  { name: 'Jasmine Green Tea', image: '/menu/3c5a8f37ba49d95ed6ebb9a48d14fed677b6e7dc.png' },
+  { name: 'Matcha Green Tea', image: '/menu/matcha-green-tea.png' },
+  { name: 'White Grape Oolong', image: '/menu/white-grape-oolong.png' },
+  { name: 'Chrysanthemum Tea', image: '/menu/chrysanthemum-tea.png' },
+  { name: 'Thai Tea', image: '/menu/thai-tea.png' },
+  { name: 'Hibiscus Tea', image: '/menu/hibiscus-tea.png' },
+  { name: 'Jasmine Green Tea', image: '/menu/jasmine-green-tea.png' },
   {
     name: 'Honey Oolong (Tie Guan Yin)',
-    image: '/menu/f3242d5dfe78b4363eb5a6ead3b11e30cbf9dd13.png',
+    image: '/menu/honey-oolong.png',
   },
 ];
 
 const SEASONAL_SPECIALS: DrinkItem[] = [
   {
     name: 'Lemon Tea',
-    image: '/menu/ea9fc81deb66a492ceca2ce1b4108edc070580e6.png',
+    image: '/menu/lemon-tea.png',
     description:
       'Tieguanyin oolong tea with lemon and golden cane sugar. Reminiscent of a lemon tea from an HK cafe',
   },
   {
     name: 'Strawberry Pandan Corn Milk',
-    image: '/menu/e6f48066fc9dd55f139b93babee46ed2b2605f63.png',
+    image: '/menu/strawberry-pandan-corn-milk.png',
     description: 'Strawberry with fresh pandan & corn milk',
   },
   {
     name: 'Mango Osmanthus',
-    image: '/menu/e147bfcacf44bb18b4b3893fdb5acc4735d3f37a.png',
+    image: '/menu/mango-osmanthus.png',
     description: 'Osmanthus floral tea with mango',
   },
   {
     name: 'Lychee Grapefruit',
-    image: '/menu/3b56dda3ba04f804e932e2ee0d3b80abee7f2efa.png',
+    image: '/menu/lychee-grapefruit.png',
     description: 'Lychee with grapefruit, garnished with a sprig of rosemary',
   },
   {
     name: 'Kiwi Mojito',
-    image: '/menu/38deef736530777f6af44a1b1866f98bb6dc4f9e.png',
+    image: '/menu/kiwi-mojito.png',
     description: 'Kiwi with lime, golden cane sugar, and mint',
   },
 ];
@@ -212,7 +212,7 @@ export default function Menu() {
             </h1>
             <div className="relative hidden h-[120px] w-[100px] shrink-0 overflow-hidden rounded-2xl shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] sm:block lg:h-[173px] lg:w-[135px]">
               <Image
-                src="/menu/bc8050cbfe494e19d63e8fd2fe9f4f0af1700723.png"
+                src="/menu/hero-boba-cup.png"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100px, 135px"
@@ -245,7 +245,7 @@ export default function Menu() {
           <div className="flex items-start gap-4 lg:gap-6">
             <div className="relative mt-2 hidden h-[150px] w-[140px] shrink-0 overflow-hidden rounded-2xl shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] sm:block lg:h-[205px] lg:w-[164px]">
               <Image
-                src="/menu/5f548b9a3b86f78969fd5758e6921cfadd491675.png"
+                src="/menu/hero-blackberry-drink.png"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 140px, 164px"
@@ -258,7 +258,7 @@ export default function Menu() {
               </h1>
               <div className="relative mt-3 h-[140px] w-full max-w-[440px] overflow-hidden rounded-2xl shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] sm:mt-4 lg:h-[224px]">
                 <Image
-                  src="/menu/bc37075af7ee004c20b73aa74d4b49b8426d0336.png"
+                  src="/menu/hero-three-drinks.png"
                   alt=""
                   fill
                   sizes="(max-width: 640px) 100vw, 440px"
@@ -347,7 +347,7 @@ export default function Menu() {
           <div className="max-w-[267px]">
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-[2px_2px_6px_0px_rgba(0,0,0,0.12)] lg:rounded-3xl">
               <Image
-                src="/menu/44a2320f22eb9f37d1007e29812b2b8d0adba9eb.png"
+                src="/menu/baby-brulee.png"
                 alt="Baby Brulee"
                 fill
                 sizes="267px"
@@ -373,7 +373,7 @@ export default function Menu() {
           <div className="max-w-[267px]">
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-[2px_2px_6px_0px_rgba(0,0,0,0.12)] lg:rounded-3xl">
               <Image
-                src="/menu/a613f0b7e2f782a5aa55d92bc71e778426647113.png"
+                src="/menu/owala-bottle-rose-quartz.png"
                 alt="Owala x Urban Ritual Bottle"
                 fill
                 sizes="267px"

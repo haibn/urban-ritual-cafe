@@ -31,7 +31,7 @@ export default function Story() {
           </div>
           <div className="relative h-[240px] w-full max-w-[440px] shrink-0 overflow-hidden rounded-[30px] sm:h-[300px] lg:h-[358px] lg:w-[440px] lg:rounded-[50px]">
             <Image
-              src="/story/f9a122c1dec8adf694cbe8107fd9b8602dfd105c.png"
+              src="/story/hero-team.png"
               alt="Urban Ritual team"
               fill
               sizes="(max-width: 1024px) 100vw, 440px"

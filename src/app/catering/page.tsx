@@ -21,7 +21,7 @@ export default function Catering() {
             </h1>
             <div className="relative h-[220px] w-[240px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] sm:h-[260px] sm:w-[280px] lg:h-[311px] lg:w-[329px] lg:rounded-[40px]">
               <Image
-                src="/catering/7ae003a5cba48bb64ca572c47aa2da07c06b91b1.png"
+                src="/catering/hero-drinks-celebration.png"
                 alt="Urban Ritual drinks being held up"
                 fill
                 sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 329px"
@@ -83,7 +83,7 @@ export default function Catering() {
           </div>
           <div className="relative order-1 h-[300px] w-full max-w-[392px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[398px] lg:w-[392px] lg:rounded-[50px]">
             <Image
-              src="/catering/bbdd458245bcac8ae650bec8bdff26bfdaa04f40.png"
+              src="/catering/catering-setup.png"
               alt="Urban Ritual catering setup"
               fill
               sizes="(max-width: 1024px) 100vw, 392px"
@@ -202,7 +202,7 @@ export default function Catering() {
             </div>
             <div className="relative order-1 h-[280px] w-full max-w-[344px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[346px] lg:w-[344px] lg:rounded-[50px]">
               <Image
-                src="/catering/4715a8ec476a7d0fb0117bbf73df5e1d74a459eb.png"
+                src="/catering/grab-and-go-crate.png"
                 alt="Grab and go boba drinks in crate"
                 fill
                 sizes="(max-width: 1024px) 100vw, 344px"
@@ -241,7 +241,7 @@ export default function Catering() {
             </div>
             <div className="relative order-1 h-[300px] w-full max-w-[346px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[371px] lg:w-[346px] lg:rounded-[50px]">
               <Image
-                src="/catering/465a83db365e4f60905c3c8ef1b49ca9bec10102.png"
+                src="/catering/full-service-bar.png"
                 alt="Full-service boba bar menu"
                 fill
                 sizes="(max-width: 1024px) 100vw, 346px"
@@ -268,7 +268,7 @@ export default function Catering() {
             </div>
             <div className="relative order-1 h-[280px] w-full max-w-[346px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[346px] lg:w-[346px] lg:rounded-[50px]">
               <Image
-                src="/catering/ad989141bb0df727253962afd639512a8b862ec5.png"
+                src="/catering/drinks-lined-up.png"
                 alt="Boba drinks lined up for event"
                 fill
                 sizes="(max-width: 1024px) 100vw, 346px"

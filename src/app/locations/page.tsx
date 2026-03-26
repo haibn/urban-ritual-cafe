@@ -14,7 +14,7 @@ const locations = [
     address: '488 Fell St, San Francisco, CA 94102',
     hours: 'Every Day 12PM-10PM',
     phone: '415-374-7181',
-    image: '/locations/ac841732f44fd8965ebac71ba51d93c90d96bc57.png',
+    image: '/locations/san-francisco-cafe.png',
     buttonText: 'VISIT SF!',
     mapsUrl: 'https://maps.google.com/?q=488+Fell+St+San+Francisco+CA+94102',
   },
@@ -23,7 +23,7 @@ const locations = [
     address: '140 S B St, San Mateo, CA 94401',
     hours: 'Every Day 11AM-10PM',
     phone: '650-458-3298',
-    image: '/locations/03f5c75c28221bb9374d01806ed70132361a808e.png',
+    image: '/locations/san-mateo-cafe.png',
     buttonText: 'VISIT SAN MATEO!',
     mapsUrl: 'https://maps.google.com/?q=140+S+B+St+San+Mateo+CA+94401',
   },
@@ -90,7 +90,7 @@ export default function Locations() {
                     {/* Address */}
                     <div className="flex items-start gap-3">
                       <Image
-                        src="/locations/895cce62ee73f8378dd16985a1813871a3f2998f.svg"
+                        src="/locations/icon-location.svg"
                         alt="Location"
                         width={24}
                         height={24}
@@ -105,7 +105,7 @@ export default function Locations() {
                     {/* Hours */}
                     <div className="flex items-start gap-3">
                       <Image
-                        src="/locations/4ebb862f713a1e1b4496c913d4e31d1797ff9d23.svg"
+                        src="/locations/icon-hours.svg"
                         alt="Hours"
                         width={24}
                         height={24}
@@ -120,7 +120,7 @@ export default function Locations() {
                     {/* Phone */}
                     <div className="flex items-start gap-3">
                       <Image
-                        src="/locations/35823a519642402332157aa5264f54cb56e0323e.svg"
+                        src="/locations/icon-phone.svg"
                         alt="Phone"
                         width={24}
                         height={24}

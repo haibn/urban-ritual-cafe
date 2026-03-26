@@ -52,7 +52,7 @@ export default function Contact() {
             {/* Left Image - hidden on mobile */}
             <div className="relative hidden h-full bg-white lg:block lg:w-1/2">
               <Image
-                src="/contact/45dd10da41b52928b072548e6f3eb8ad15a3a0fc.png"
+                src="/contact/customer-enjoying-drink.png"
                 alt="Urban Ritual customer enjoying a drink"
                 fill
                 className="object-cover object-top"
