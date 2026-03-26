@@ -76,17 +76,40 @@ function DrinkCard({
   );
 }
 
-/* ─── Mobile touch slider (scroll-snap based) ─── */
+/* ─── Mobile touch slider (infinite loop, scroll-snap based) ─── */
 function MobileSlider({ drinks }: { drinks: Drink[] }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const count = drinks.length;
+  const tripled = [...drinks, ...drinks, ...drinks];
+
+  const [currentIndex, setCurrentIndex] = useState(count); // Start at middle set
   const [tappedIndex, setTappedIndex] = useState<number | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const isRepositioningRef = useRef(false);
   const isScrollingRef = useRef(false);
+  const repositionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // On mount, silently scroll to the start of the middle set
+  useEffect(() => {
+    const container = sliderRef.current;
+    if (!container) return;
+
+    // Wait for layout to settle
+    requestAnimationFrame(() => {
+      const child = container.children[count] as HTMLElement;
+      if (child) {
+        isRepositioningRef.current = true;
+        container.scrollLeft = child.offsetLeft - (container.offsetWidth / 2 - child.offsetWidth / 2);
+        requestAnimationFrame(() => {
+          isRepositioningRef.current = false;
+        });
+      }
+    });
+  }, [count]);
 
   // Track current index from scroll position
   const handleScroll = useCallback(() => {
     const container = sliderRef.current;
-    if (!container || isScrollingRef.current) return;
+    if (!container || isRepositioningRef.current || isScrollingRef.current) return;
 
     const children = Array.from(container.children) as HTMLElement[];
     if (children.length === 0) return;
@@ -105,33 +128,76 @@ function MobileSlider({ drinks }: { drinks: Drink[] }) {
     });
 
     setCurrentIndex(closestIndex);
+
+    // Debounced reposition check — after scroll settles
+    if (repositionTimerRef.current) clearTimeout(repositionTimerRef.current);
+    repositionTimerRef.current = setTimeout(() => {
+      repositionToMiddle(closestIndex);
+    }, 200);
   }, []);
 
-  // Scroll to specific index
+  // Silently reposition to the middle set if we've scrolled into the 1st or 3rd set
+  const repositionToMiddle = useCallback(
+    (index: number) => {
+      const container = sliderRef.current;
+      if (!container) return;
+
+      let targetIndex = index;
+      if (index < count) {
+        targetIndex = index + count;
+      } else if (index >= count * 2) {
+        targetIndex = index - count;
+      } else {
+        return; // Already in middle set
+      }
+
+      const child = container.children[targetIndex] as HTMLElement;
+      if (!child) return;
+
+      isRepositioningRef.current = true;
+      container.scrollLeft = child.offsetLeft - (container.offsetWidth / 2 - child.offsetWidth / 2);
+      setCurrentIndex(targetIndex);
+
+      requestAnimationFrame(() => {
+        isRepositioningRef.current = false;
+      });
+    },
+    [count]
+  );
+
+  // Scroll to specific index within the tripled array
   const scrollToIndex = useCallback(
     (index: number) => {
       const container = sliderRef.current;
       if (!container) return;
-      const clamped = Math.max(0, Math.min(index, drinks.length - 1));
-      const child = container.children[clamped] as HTMLElement;
+
+      // Wrap within tripled bounds
+      let target = index;
+      if (target < 0) target = count * 2 + target;
+      if (target >= count * 3) target = count + (target - count * 3);
+
+      const child = container.children[target] as HTMLElement;
       if (!child) return;
 
       isScrollingRef.current = true;
       child.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      setCurrentIndex(clamped);
+      setCurrentIndex(target);
       setTappedIndex(null);
 
-      // Allow scroll tracking again after animation
       setTimeout(() => {
         isScrollingRef.current = false;
-      }, 400);
+        // Check if we need to reposition after the smooth scroll
+        repositionToMiddle(target);
+      }, 500);
     },
-    [drinks.length]
+    [count, repositionToMiddle]
   );
 
   const handleTap = (index: number) => {
     setTappedIndex(tappedIndex === index ? null : index);
   };
+
+  const realIndex = ((currentIndex % count) + count) % count;
 
   return (
     <div className="relative w-full py-8">
@@ -143,7 +209,7 @@ function MobileSlider({ drinks }: { drinks: Drink[] }) {
         onScroll={handleScroll}
       >
         <style>{`.flex.snap-x::-webkit-scrollbar { display: none; }`}</style>
-        {drinks.map((drink, index) => (
+        {tripled.map((drink, index) => (
           <div key={`mobile-${drink.name}-${index}`} className="flex-shrink-0 snap-center">
             <DrinkCard
               drink={drink}
@@ -155,36 +221,14 @@ function MobileSlider({ drinks }: { drinks: Drink[] }) {
         ))}
       </div>
 
-      {/* Arrow buttons */}
-      <button
-        onClick={() => scrollToIndex(currentIndex - 1)}
-        disabled={currentIndex === 0}
-        className="absolute left-3 top-[calc(50%-20px)] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-lg transition-opacity disabled:opacity-0"
-        aria-label="Previous drink"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-      <button
-        onClick={() => scrollToIndex(currentIndex + 1)}
-        disabled={currentIndex === drinks.length - 1}
-        className="absolute right-3 top-[calc(50%-20px)] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-lg transition-opacity disabled:opacity-0"
-        aria-label="Next drink"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
-
-      {/* Dot indicators */}
+      {/* Dot indicators — mapped to real index */}
       <div className="mt-6 flex justify-center gap-1.5">
         {drinks.map((_, index) => (
           <button
             key={index}
-            onClick={() => scrollToIndex(index)}
+            onClick={() => scrollToIndex(count + index)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'w-6 bg-[#BE8F59]' : 'w-1.5 bg-gray-300'
+              index === realIndex ? 'w-6 bg-[#BE8F59]' : 'w-1.5 bg-gray-300'
             }`}
             aria-label={`Go to drink ${index + 1}`}
           />
@@ -271,7 +315,7 @@ export default function InfiniteDrinksGallery({
 }: InfiniteDrinksGalleryProps) {
   return (
     <>
-      <div className="w-full lg:hidden">
+      <div className="w-full overflow-hidden lg:hidden">
         <MobileSlider drinks={drinks} />
       </div>
       <div className="hidden lg:block">

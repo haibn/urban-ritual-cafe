@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Button from '../../components/ui/Button';
 import HomeSignatureDrinks from '../../components/sections/HomeSignatureDrinks';
 import ContactForm from '../../components/sections/ContactForm';
-import Testimonial from '../../components/ui/Testimonial';
+import HomeTestimonials from '../../components/sections/HomeTestimonials';
 import LocationCard from '../../components/ui/LocationCard';
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
             <h1 className="font-urbanist text-[66.4px] leading-tight tracking-widest text-white">
               CRAFTING UNFORGETTABLE
             </h1>
-            <div className="-mt-9 flex items-baseline justify-end">
+            <div className="-mt-[27px] flex items-baseline justify-end">
               <h1 className="font-petit mr-6 text-[62px] text-[#FFC787]">boba</h1>
               <h1 className="font-urbanist text-[62px] tracking-widest text-white">
                 EXPERIENCES EVERYDAY
@@ -47,17 +47,39 @@ export default function Home() {
           {/* Mobile/Tablet layout: text above drinks, button below drinks */}
           <div className="h-full lg:hidden">
             {/* Text: positioned above the drinks */}
-            <div className="absolute inset-x-0 top-[14%] px-5 text-center min-[412px]:top-[18%] sm:top-[20%] sm:px-10">
-              <h1 className="font-urbanist text-[5.6vw] leading-tight tracking-[0.04em] text-white min-[412px]:text-[26px] min-[412px]:tracking-[0.08em] sm:text-[42px] sm:tracking-widest">
-                CRAFTING UNFORGETTABLE
-              </h1>
-              <div className="-mt-1 flex flex-wrap items-baseline justify-center sm:-mt-3">
-                <h1 className="font-petit mr-2 text-[5.2vw] text-[#FFC787] min-[412px]:text-[24px] sm:mr-3 sm:text-[40px]">
-                  boba
+            <div className="absolute inset-x-0 top-[8%] px-5 text-center min-[412px]:top-[18%] sm:top-[20%] sm:px-10">
+              {/* Small screens (< 412px): multi-line, larger text */}
+              <div className="min-[412px]:hidden">
+                <h1 className="font-urbanist text-[8.5vw] leading-[1.15] tracking-[0.06em] text-white">
+                  CRAFTING
                 </h1>
-                <h1 className="font-urbanist text-[5.2vw] tracking-[0.04em] text-white min-[412px]:text-[24px] min-[412px]:tracking-[0.08em] sm:text-[40px] sm:tracking-widest">
-                  EXPERIENCES EVERYDAY
+                <h1 className="font-urbanist text-[8.5vw] leading-[1.15] tracking-[0.06em] text-white">
+                  UNFORGETTABLE
                 </h1>
+                <div className="flex items-baseline justify-center gap-x-1.5">
+                  <h1 className="font-petit text-[7.5vw] text-[#FFC787]">boba</h1>
+                  <h1 className="font-urbanist text-[8.5vw] leading-[1.15] tracking-[0.06em] text-white">
+                    EXPERIENCES
+                  </h1>
+                </div>
+                <h1 className="font-urbanist text-[8.5vw] leading-[1.15] tracking-[0.06em] text-white">
+                  EVERYDAY
+                </h1>
+              </div>
+
+              {/* 412px+ screens: original compact layout */}
+              <div className="hidden min-[412px]:block">
+                <h1 className="font-urbanist text-[26px] leading-tight tracking-[0.08em] text-white sm:text-[42px] sm:tracking-widest">
+                  CRAFTING UNFORGETTABLE
+                </h1>
+                <div className="-mt-1 flex flex-wrap items-baseline justify-center sm:-mt-3">
+                  <h1 className="font-petit mr-2 text-[24px] text-[#FFC787] sm:mr-3 sm:text-[40px]">
+                    boba
+                  </h1>
+                  <h1 className="font-urbanist text-[24px] tracking-[0.08em] text-white sm:text-[40px] sm:tracking-widest">
+                    EXPERIENCES EVERYDAY
+                  </h1>
+                </div>
               </div>
             </div>
             {/* Button: at the bottom, below the drinks */}
@@ -170,48 +192,7 @@ export default function Home() {
       </section>
 
       {/* Customer testimonials */}
-      <section className="flex justify-center py-10 lg:py-20">
-        <div className="w-full max-w-[1160px] px-10 lg:px-0">
-          <h2 className="font-urbanist text-2xl font-normal tracking-wide lg:text-[51px]">
-            What our customers are saying ...
-          </h2>
-          <br />
-          <div className="grid auto-rows-[1fr] justify-center gap-6 lg:gap-15">
-            <div className="grid h-full grid-cols-1 gap-6 lg:grid-cols-[43.75rem_25rem] lg:gap-15">
-              <Testimonial
-                text="I've been here about four times already, and it's hands-down my favorite bubble tea spot in San Francisco. The Honey Boba topping is an absolute must--seriously, don't skip it! Their pearls are perfectly chewy and, in my opinion, the best in town ..."
-                customerImage="/banners/customer-reik.png"
-                bgColor="black"
-                textColor="white"
-                width="w-full lg:w-[43.75rem]"
-              />
-              <Testimonial
-                text="Urban Ritual is probably one of the best boba shops in the area! I've never had a bad drink there..."
-                customerImage="/banners/customer-nathan.png"
-                bgColor="black"
-                textColor="white"
-                width="w-full lg:w-[25rem]"
-              />
-            </div>
-            <div className="grid h-full grid-cols-1 gap-6 lg:grid-cols-[25rem_43.75rem] lg:gap-15">
-              <Testimonial
-                text="My favorite boba in SF! All their drinks are so unique and well balanced."
-                customerImage="/banners/customer-jenny.png"
-                bgColor="black"
-                textColor="white"
-                width="w-full lg:w-[25rem]"
-              />
-              <Testimonial
-                text="Really enjoy their drinks and variety! I ordered the toffee matcha latte with macadamia nut milk (yum)! Macadamia milk isn't a typical milk substitution offered at many places so I'm glad this is an option here ..."
-                customerImage="/banners/customer-judy.png"
-                bgColor="black"
-                textColor="white"
-                width="w-full lg:w-[43.75rem]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeTestimonials />
 
       {/* Our Locations */}
       <section className="flex flex-col items-center justify-center py-10 lg:py-20">

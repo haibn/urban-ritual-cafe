@@ -38,7 +38,7 @@ export default function LocationCard({
   buttonText,
 }: LocationCardProps) {
   return (
-    <div className="relative w-full h-auto" style={{ maxWidth: width }}>
+    <div className="relative h-auto w-full" style={{ maxWidth: width }}>
       {/* Overlapping location image - desktop only */}
       <div className="absolute -top-8 -right-10 z-10 hidden lg:block">
         <div className="relative h-37 w-52 overflow-hidden rounded-xl">
@@ -47,19 +47,25 @@ export default function LocationCard({
       </div>
 
       {/* Mobile inline location image */}
-      <div className="relative h-[180px] w-full overflow-hidden rounded-t-3xl lg:hidden">
-        <Image src={imageSrc} alt={locationName} fill className="object-cover" sizes="100vw" />
+      <div className="relative z-0 mb-[-15px] h-[180px] w-full overflow-hidden rounded-t-3xl lg:hidden">
+        <Image
+          src={imageSrc}
+          alt={locationName}
+          fill
+          className="object-cover object-top"
+          sizes="100vw"
+        />
       </div>
 
       {/* Main card container */}
       <div
-        className={`rounded-b-3xl px-6 py-6 shadow-lg lg:rounded-4xl lg:px-8 lg:py-8 lg:pt-10 ${height ? 'h-auto lg:h-[13.5rem]' : 'h-auto'}`}
+        className={`relative z-10 rounded-b-3xl px-6 py-6 shadow-lg lg:z-auto lg:rounded-4xl lg:px-8 lg:py-8 lg:pt-10 ${height ? 'h-auto lg:h-[13.5rem]' : 'h-auto'}`}
         style={{
           backgroundColor: bgColor,
           color: textColor,
         }}
       >
-        <div className="flex flex-col items-start gap-4 lg:flex-row lg:h-full lg:items-center lg:justify-between lg:gap-8">
+        <div className="flex flex-col items-start gap-4 lg:h-full lg:flex-row lg:items-center lg:justify-between lg:gap-8">
           {/* Left side - Location information */}
           <div className="flex-1 space-y-3 pl-2 lg:space-y-4 lg:pl-10">
             {/* Location name */}
@@ -76,7 +82,9 @@ export default function LocationCard({
                   height={20}
                   sizes="20px"
                 />
-                <p className="font-nunito text-medium text-base leading-relaxed lg:text-lg">{address}</p>
+                <p className="font-nunito text-medium text-base leading-relaxed lg:text-lg">
+                  {address}
+                </p>
               </div>
 
               {/* Phone line */}
@@ -100,7 +108,7 @@ export default function LocationCard({
               color="#FFFFFF"
               bgColorHovered="white"
               colorHovered="black"
-              text={buttonText || "VISIT US NOW!"}
+              text={buttonText || 'VISIT US NOW!'}
               path="/locations"
             />
           </div>

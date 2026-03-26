@@ -73,7 +73,7 @@ export default function ContactForm() {
         <div className="mt-4 flex justify-end">
           <button
             type="submit"
-            className="font-urbanist inline-block rounded-xl px-6 py-3 font-semibold tracking-widest drop-shadow-2xl transition-colors duration-300"
+            className="font-urbanist inline-block cursor-pointer rounded-xl px-6 py-3 font-semibold tracking-widest drop-shadow-2xl transition-colors duration-300"
             style={{
               backgroundColor: isHovered ? 'white' : '#FF9500',
               color: isHovered ? 'black' : '#FFFFFF',

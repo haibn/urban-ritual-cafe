@@ -30,11 +30,11 @@ export default function Footer() {
                   Our Company
                 </h4>
                 <nav className="flex flex-col items-center space-y-2 sm:items-start">
-                  <Link href="/story" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors uppercase tracking-wider">Story</Link>
-                  <Link href="/menu" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors uppercase tracking-wider">Menu</Link>
-                  <Link href="/locations" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors uppercase tracking-wider">Locations</Link>
-                  <Link href="/gift-cards" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors uppercase tracking-wider">Gift Cards</Link>
-                  <Link href="/privacy" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors uppercase tracking-wider">Privacy Policy</Link>
+                  <Link href="/story" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Story</Link>
+                  <Link href="/menu" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Menu</Link>
+                  <Link href="/locations" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Locations</Link>
+                  <Link href="/gift-cards" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Gift Cards</Link>
+                  <Link href="/privacy" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Privacy Policy</Link>
                 </nav>
               </div>
 
@@ -44,33 +44,33 @@ export default function Footer() {
                   Get In Touch
                 </h4>
                 <nav className="flex flex-col items-center space-y-2 sm:items-start">
-                  <Link href="/contact" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors capitalize tracking-wider">Contact Us!</Link>
-                  <Link href="/hiring" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors capitalize tracking-wider">Hiring</Link>
-                  <Link href="/catering" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors capitalize tracking-wider">Catering</Link>
-                  <Link href="/catering-form" className="font-nunito text-[15px] text-black font-bold hover:text-[#FF9500] transition-colors capitalize tracking-wider">Catering Form</Link>
+                  <Link href="/contact" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Contact Us!</Link>
+                  <Link href="/hiring" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Hiring</Link>
+                  <Link href="/catering" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Catering</Link>
+                  <Link href="/catering-form" className="font-urbanist text-[20px] text-black font-medium hover:text-[#FF9500] transition-colors capitalize tracking-[3px] underline decoration-solid">Catering Form</Link>
                 </nav>
               </div>
 
               {/* Connect With Us */}
-              <div className="flex flex-col items-center space-y-4 sm:items-start">
+              <div className="flex flex-col items-center space-y-4">
                 <h4 className="font-urbanist text-[20px] font-bold tracking-widest text-black uppercase">
                   Connect With Us!
                 </h4>
-                <div className="flex items-center gap-3">
-                  <Link href="#" className="hover:opacity-75 transition-opacity">
-                    <Image src="/logos/ig.svg" alt="Instagram" width={32} height={32} />
+                <div className="flex items-center justify-center gap-2">
+                  <Link href="#" className="hover:scale-110 transition-transform duration-200">
+                    <Image src="/logos/ig.svg" alt="Instagram" width={36} height={36} />
                   </Link>
-                  <Link href="#" className="hover:opacity-75 transition-opacity">
-                    <Image src="/logos/facebook.svg" alt="Facebook" width={32} height={32} />
+                  <Link href="#" className="hover:scale-110 transition-transform duration-200">
+                    <Image src="/logos/facebook.svg" alt="Facebook" width={36} height={36} />
                   </Link>
-                  <Link href="#" className="hover:opacity-75 transition-opacity">
-                    <Image src="/logos/yelp.svg" alt="Yelp" width={32} height={32} />
+                  <Link href="#" className="hover:scale-110 transition-transform duration-200">
+                    <Image src="/logos/yelp.svg" alt="Yelp" width={36} height={36} />
                   </Link>
-                  <Link href="#" className="hover:opacity-75 transition-opacity">
-                    <Image src="/logos/ubereats.svg" alt="UberEats" width={32} height={32} className="object-contain" />
+                  <Link href="#" className="hover:scale-110 transition-transform duration-200">
+                    <Image src="/logos/ubereats.svg" alt="UberEats" width={36} height={36} className="object-contain" />
                   </Link>
-                  <Link href="#" className="hover:opacity-75 transition-opacity">
-                    <Image src="/logos/doordash.svg" alt="DoorDash" width={32} height={32} className="object-contain" />
+                  <Link href="#" className="hover:scale-110 transition-transform duration-200">
+                    <Image src="/logos/doordash.svg" alt="DoorDash" width={36} height={36} className="object-contain" />
                   </Link>
                 </div>
               </div>
@@ -78,10 +78,10 @@ export default function Footer() {
             </div>
 
             <div className="mt-8 flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center lg:mt-12 lg:justify-end lg:pr-16">
-              <Link href="/locations" className="bg-[#FF9500] hover:bg-black transition-colors text-white font-nunito font-bold text-base uppercase px-5 py-2.5 rounded-full tracking-wider shadow-md lg:text-[20px] lg:px-7 lg:py-3">
+              <Link href="/locations" className="bg-[#FF9500] hover:bg-black transition-colors duration-300 text-white font-nunito font-bold text-base uppercase px-5 py-2.5 rounded-xl tracking-wider shadow-md lg:text-[20px] lg:px-7 lg:py-3">
                 Visit Us Now!
               </Link>
-              <Link href="/menu" className="bg-[#FF9500] hover:bg-black transition-colors text-white font-nunito font-bold text-base uppercase px-5 py-2.5 rounded-full tracking-wider shadow-md lg:text-[20px] lg:px-7 lg:py-3">
+              <Link href="/menu" className="bg-[#FF9500] hover:bg-black transition-colors duration-300 text-white font-nunito font-bold text-base uppercase px-5 py-2.5 rounded-xl tracking-wider shadow-md lg:text-[20px] lg:px-7 lg:py-3">
                 Order Now!
               </Link>
             </div>
