@@ -41,7 +41,7 @@ export default function FadeIn({
     const fromVars: gsap.TweenVars = {
       opacity: 0,
       duration,
-      ease: 'power2.out',
+      ease: 'power3.out',
       delay,
     };
 

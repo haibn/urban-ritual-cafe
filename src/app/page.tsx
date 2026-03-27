@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import Button from '../../components/ui/Button';
 import FadeIn from '../../components/motion/FadeIn';
 import ScrollReveal from '../../components/motion/ScrollReveal';
@@ -217,7 +216,6 @@ export default function Home() {
             height={2780}
             sizes="100vw"
             className="h-auto w-full"
-            priority
           />
         </ScrollReveal>
       </section>
@@ -285,6 +283,7 @@ export default function Home() {
                 src="/pictures/catering.png"
                 alt="Catering"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
               />
             </div>
@@ -336,6 +335,7 @@ export default function Home() {
                 src="/pictures/catering-wedding.png"
                 alt="Wedding Catering"
                 fill
+                sizes="(max-width: 1024px) 100vw, 560px"
                 className="object-cover object-center"
               />
             </div>
@@ -380,6 +380,7 @@ export default function Home() {
                 src="/contact/customer-enjoying-drink.png"
                 alt="Urban Ritual customer enjoying a drink"
                 fill
+                sizes="(max-width: 1024px) 0vw, 50vw"
                 className="object-cover object-top"
               />
             </div>

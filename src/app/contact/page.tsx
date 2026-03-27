@@ -57,6 +57,7 @@ export default function Contact() {
                 src="/contact/customer-enjoying-drink.png"
                 alt="Urban Ritual customer enjoying a drink"
                 fill
+                sizes="(max-width: 1024px) 0vw, 50vw"
                 className="object-cover object-top"
               />
             </div>

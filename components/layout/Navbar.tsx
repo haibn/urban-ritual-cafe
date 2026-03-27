@@ -38,7 +38,7 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className={`font-urbanist ${pathname === link.href ? 'text-[#BE8F59]' : ''}`}
+            className={`font-urbanist transition-colors duration-200 hover:text-[#BE8F59] ${pathname === link.href ? 'text-[#BE8F59]' : ''}`}
           >
             {link.label}
           </Link>
@@ -71,7 +71,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-urbanist text-2xl font-medium tracking-[0.2em] transition-colors duration-200 ${pathname === link.href ? 'text-[#BE8F59]' : 'text-black'}`}
+              className={`font-urbanist text-2xl font-medium tracking-[0.2em] transition-colors duration-200 hover:text-[#BE8F59] ${pathname === link.href ? 'text-[#BE8F59]' : 'text-black'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}

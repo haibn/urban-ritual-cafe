@@ -39,7 +39,7 @@ export default function HomeTestimonials() {
   // Start in the middle set so there are items on both sides
   const [currentIndex, setCurrentIndex] = useState(COUNT);
   const [slideWidth, setSlideWidth] = useState(SLIDE_WIDTH_MOBILE);
-  const isResettingRef = useRef(false);
+  const [isResetting, setIsResetting] = useState(false);
   const isPausedRef = useRef(false);
   const touchStartXRef = useRef(0);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -70,17 +70,17 @@ export default function HomeTestimonials() {
   // After transition ends, silently reposition to the middle set if needed
   const handleTransitionEnd = useCallback(() => {
     if (currentIndex >= COUNT * 2) {
-      isResettingRef.current = true;
+      setIsResetting(true);
       setCurrentIndex((prev) => prev - COUNT);
     } else if (currentIndex < COUNT) {
-      isResettingRef.current = true;
+      setIsResetting(true);
       setCurrentIndex((prev) => prev + COUNT);
     }
   }, [currentIndex]);
 
   // When resetting, remove transition then restore it next frame
   useEffect(() => {
-    if (isResettingRef.current && trackRef.current) {
+    if (isResetting && trackRef.current) {
       const track = trackRef.current;
       track.style.transition = 'none';
       // Force reflow to apply the no-transition change
@@ -88,11 +88,11 @@ export default function HomeTestimonials() {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           track.style.transition = 'transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-          isResettingRef.current = false;
+          setIsResetting(false);
         });
       });
     }
-  }, [currentIndex]);
+  }, [currentIndex, isResetting]);
 
   // Auto-advance
   useEffect(() => {
@@ -111,22 +111,11 @@ export default function HomeTestimonials() {
         isPausedRef.current = true;
       } else {
         // Clamp index back to middle set instantly (no animation)
+        setIsResetting(true);
         setCurrentIndex((prev) => {
           const real = ((prev % COUNT) + COUNT) % COUNT;
           return COUNT + real;
         });
-        if (trackRef.current) {
-          trackRef.current.style.transition = 'none';
-          void trackRef.current.offsetHeight;
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              if (trackRef.current) {
-                trackRef.current.style.transition =
-                  'transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-              }
-            });
-          });
-        }
         isPausedRef.current = false;
       }
     };
@@ -142,7 +131,7 @@ export default function HomeTestimonials() {
   const handleTouchEnd = (e: React.TouchEvent) => {
     const deltaX = e.changedTouches[0].clientX - touchStartXRef.current;
     if (Math.abs(deltaX) > 50) {
-      deltaX > 0 ? goPrev() : goNext();
+      if (deltaX > 0) { goPrev(); } else { goNext(); }
     }
     isPausedRef.current = false;
   };
@@ -175,7 +164,7 @@ export default function HomeTestimonials() {
           className="flex items-center"
           style={{
             transform: `translateX(${trackTranslateX}%)`,
-            transition: isResettingRef.current
+            transition: isResetting
               ? 'none'
               : 'transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           }}

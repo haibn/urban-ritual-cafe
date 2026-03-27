@@ -106,36 +106,6 @@ function MobileSlider({ drinks }: { drinks: Drink[] }) {
     });
   }, [count]);
 
-  // Track current index from scroll position
-  const handleScroll = useCallback(() => {
-    const container = sliderRef.current;
-    if (!container || isRepositioningRef.current || isScrollingRef.current) return;
-
-    const children = Array.from(container.children) as HTMLElement[];
-    if (children.length === 0) return;
-
-    const containerCenter = container.scrollLeft + container.offsetWidth / 2;
-    let closestIndex = 0;
-    let closestDist = Infinity;
-
-    children.forEach((child, i) => {
-      const childCenter = child.offsetLeft + child.offsetWidth / 2;
-      const dist = Math.abs(containerCenter - childCenter);
-      if (dist < closestDist) {
-        closestDist = dist;
-        closestIndex = i;
-      }
-    });
-
-    setCurrentIndex(closestIndex);
-
-    // Debounced reposition check — after scroll settles
-    if (repositionTimerRef.current) clearTimeout(repositionTimerRef.current);
-    repositionTimerRef.current = setTimeout(() => {
-      repositionToMiddle(closestIndex);
-    }, 200);
-  }, []);
-
   // Silently reposition to the middle set if we've scrolled into the 1st or 3rd set
   const repositionToMiddle = useCallback(
     (index: number) => {
@@ -164,6 +134,36 @@ function MobileSlider({ drinks }: { drinks: Drink[] }) {
     },
     [count]
   );
+
+  // Track current index from scroll position
+  const handleScroll = useCallback(() => {
+    const container = sliderRef.current;
+    if (!container || isRepositioningRef.current || isScrollingRef.current) return;
+
+    const children = Array.from(container.children) as HTMLElement[];
+    if (children.length === 0) return;
+
+    const containerCenter = container.scrollLeft + container.offsetWidth / 2;
+    let closestIndex = 0;
+    let closestDist = Infinity;
+
+    children.forEach((child, i) => {
+      const childCenter = child.offsetLeft + child.offsetWidth / 2;
+      const dist = Math.abs(containerCenter - childCenter);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestIndex = i;
+      }
+    });
+
+    setCurrentIndex(closestIndex);
+
+    // Debounced reposition check — after scroll settles
+    if (repositionTimerRef.current) clearTimeout(repositionTimerRef.current);
+    repositionTimerRef.current = setTimeout(() => {
+      repositionToMiddle(closestIndex);
+    }, 200);
+  }, [repositionToMiddle]);
 
   // Scroll to specific index within the tripled array
   const scrollToIndex = useCallback(

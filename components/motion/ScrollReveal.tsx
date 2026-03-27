@@ -41,7 +41,7 @@ export default function ScrollReveal({
     const fromVars: gsap.TweenVars = {
       opacity: 0,
       duration,
-      ease: 'power2.out',
+      ease: 'power3.out',
       delay,
       scrollTrigger: {
         trigger: el,
