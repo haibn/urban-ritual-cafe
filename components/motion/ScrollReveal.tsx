@@ -1,0 +1,73 @@
+'use client';
+
+import { useEffect, useRef, type ReactNode } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface ScrollRevealProps {
+  children: ReactNode;
+  direction?: 'up' | 'left' | 'right';
+  delay?: number;
+  distance?: number;
+  duration?: number;
+  stagger?: number;
+  className?: string;
+}
+
+export default function ScrollReveal({
+  children,
+  direction = 'up',
+  delay = 0,
+  distance = 30,
+  duration = 0.8,
+  stagger = 0,
+  className,
+}: ScrollRevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const animateEls = stagger > 0 ? el.querySelectorAll('[data-animate]') : null;
+    const visible =
+      animateEls && animateEls.length > 0
+        ? Array.from(animateEls).filter((child) => child.getClientRects().length > 0)
+        : null;
+    const targets = visible && visible.length > 0 ? visible : el;
+
+    const fromVars: gsap.TweenVars = {
+      opacity: 0,
+      duration,
+      ease: 'power2.out',
+      delay,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        once: true,
+      },
+    };
+
+    if (stagger > 0 && visible && visible.length > 0) {
+      fromVars.stagger = stagger;
+    }
+
+    if (direction === 'up') fromVars.y = distance;
+    else if (direction === 'left') fromVars.x = distance;
+    else if (direction === 'right') fromVars.x = -distance;
+
+    const ctx = gsap.context(() => {
+      gsap.from(targets, fromVars);
+    }, el);
+
+    return () => ctx.revert();
+  }, [direction, delay, distance, duration, stagger]);
+
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
+}

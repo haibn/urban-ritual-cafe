@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import FadeIn from '../../../components/motion/FadeIn';
+import ScrollReveal from '../../../components/motion/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Our Story | Urban Ritual Cafe',
@@ -12,8 +14,8 @@ export default function Story() {
     <div>
       {/* Hero */}
       <section className="flex justify-center px-10 pt-16 pb-10 lg:px-20 lg:pt-[140px] lg:pb-20">
-        <div className="flex w-full max-w-[1280px] flex-col-reverse items-center gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="text-center lg:text-left">
+        <FadeIn delay={0.2} stagger={0.15} className="flex w-full max-w-[1280px] flex-col-reverse items-center gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div data-animate className="text-center lg:text-left">
             <h1 className="font-urbanist text-[36px] leading-[1.1] font-medium tracking-widest text-black uppercase sm:text-[50px] lg:text-[90px]">
               Redefining
             </h1>
@@ -29,7 +31,7 @@ export default function Story() {
               </span>
             </div>
           </div>
-          <div className="relative h-[240px] w-full max-w-[440px] shrink-0 overflow-hidden rounded-[30px] sm:h-[300px] lg:h-[358px] lg:w-[440px] lg:rounded-[50px]">
+          <div data-animate className="relative h-[240px] w-full max-w-[440px] shrink-0 overflow-hidden rounded-[30px] sm:h-[300px] lg:h-[358px] lg:w-[440px] lg:rounded-[50px]">
             <Image
               src="/story/hero-team.png"
               alt="Urban Ritual team"
@@ -39,22 +41,24 @@ export default function Story() {
               priority
             />
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Tagline */}
       <section className="flex justify-center px-10 pb-16 lg:px-20 lg:pb-24">
-        <p className="font-nunito max-w-[1280px] text-center text-sm leading-relaxed tracking-tight text-black uppercase lg:text-[21px]">
+        <ScrollReveal className="max-w-[1280px]">
+        <p className="font-nunito text-center text-sm leading-relaxed tracking-tight text-black uppercase lg:text-[21px]">
           Urban Ritual is more than a boba shop. With locations in San Francisco and San Mateo,
           we&apos;ve been crafting signature milk teas, coffee drinks, and innovative flavors since
           2018 — blending creativity, culture, and community into every sip.
         </p>
+        </ScrollReveal>
       </section>
 
       {/* Our Story */}
       <section className="flex justify-center px-10 py-10 lg:px-20 lg:py-20">
-        <div className="flex w-full max-w-[1160px] flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
-          <div className="order-2 lg:order-1 lg:flex-1">
+        <ScrollReveal stagger={0.12} className="flex w-full max-w-[1160px] flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
+          <div data-animate className="order-2 lg:order-1 lg:flex-1">
             <h2 className="font-urbanist mb-8 text-3xl leading-[1.5] font-medium tracking-wide text-black uppercase lg:text-[61px]">
               OUR STORY
             </h2>
@@ -72,7 +76,7 @@ export default function Story() {
               </p>
             </div>
           </div>
-          <div className="relative order-1 h-[400px] w-full max-w-[481px] shrink-0 overflow-hidden rounded-[30px] lg:order-2 lg:h-[601px] lg:w-[481px] lg:rounded-[50px]">
+          <div data-animate className="relative order-1 h-[400px] w-full max-w-[481px] shrink-0 overflow-hidden rounded-[30px] lg:order-2 lg:h-[601px] lg:w-[481px] lg:rounded-[50px]">
             <Image
               src="/pictures/story-artisanal-matcha.png"
               alt="Artisanal matcha drinks"
@@ -81,21 +85,23 @@ export default function Story() {
               className="object-cover"
             />
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* What Makes Urban Ritual Different? */}
       <section className="flex flex-col items-center px-10 py-10 lg:px-20 lg:py-20">
-        <h2 className="font-urbanist mb-6 text-center text-2xl font-medium capitalize lg:mb-8 lg:text-[47px]">
+        <ScrollReveal stagger={0.12}>
+        <h2 data-animate className="font-urbanist mb-6 text-center text-2xl font-medium capitalize lg:mb-8 lg:text-[47px]">
           What Makes Urban Ritual Different?
         </h2>
-        <p className="font-nunito mb-8 max-w-[1030px] text-base leading-relaxed tracking-tight text-black lg:mb-12 lg:text-right lg:text-[27px] lg:leading-[1.5]">
+        <p data-animate className="font-nunito mb-8 max-w-[1030px] text-base leading-relaxed tracking-tight text-black lg:mb-12 lg:text-right lg:text-[27px] lg:leading-[1.5]">
           At Urban Ritual, we take a thoughtful approach to every drink we create. Each recipe is
           inspired by flavors we love, experiences we&apos;ve had, and the joy of sharing something
           special with the community.
         </p>
-        <div className="flex w-full max-w-[1160px] flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-16">
-          <div className="relative h-[400px] w-full max-w-[439px] shrink-0 overflow-hidden rounded-[30px] lg:h-[548px] lg:w-[439px] lg:rounded-[50px]">
+        </ScrollReveal>
+        <ScrollReveal stagger={0.12} className="flex w-full max-w-[1160px] flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-16">
+          <div data-animate className="relative h-[400px] w-full max-w-[439px] shrink-0 overflow-hidden rounded-[30px] lg:h-[548px] lg:w-[439px] lg:rounded-[50px]">
             <Image
               src="/pictures/story-cinnamon-crunch.png"
               alt="Cinnamon crunch boba"
@@ -104,7 +110,7 @@ export default function Story() {
               className="object-cover"
             />
           </div>
-          <ul className="font-nunito max-w-[660px] list-disc space-y-4 pl-5 text-base leading-relaxed tracking-tight text-black lg:text-right lg:text-[27px] lg:leading-[1.5]">
+          <ul data-animate className="font-nunito max-w-[660px] list-disc space-y-4 pl-5 text-base leading-relaxed tracking-tight text-black lg:text-right lg:text-[27px] lg:leading-[1.5]">
             <li>
               <strong>Creative Recipes:</strong> From our fan-favorite Matcha Toffee to our
               Strawberry Milk Bar, every drink has a story behind it.
@@ -122,21 +128,21 @@ export default function Story() {
               anywhere — convenient, shareable, and just as delicious.
             </li>
           </ul>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Our Mission & Values */}
       <section className="flex w-full justify-center bg-[#4B4B4B] px-10 py-16 shadow-[3px_3px_8px_0px_rgba(0,0,0,0.25)] lg:px-20 lg:py-24">
-        <div className="w-full max-w-[1160px] text-center">
-          <h2 className="font-urbanist mb-10 text-2xl font-medium text-white capitalize lg:text-[47px]">
+        <ScrollReveal stagger={0.10} className="w-full max-w-[1160px] text-center">
+          <h2 data-animate className="font-urbanist mb-10 text-2xl font-medium text-white capitalize lg:text-[47px]">
             Our Mission &amp; Values
           </h2>
-          <p className="font-nunito mx-auto mb-10 max-w-[1136px] text-base leading-relaxed tracking-tight text-white lg:text-[27px] lg:leading-[1.5]">
+          <p data-animate className="font-nunito mx-auto mb-10 max-w-[1136px] text-base leading-relaxed tracking-tight text-white lg:text-[27px] lg:leading-[1.5]">
             At Urban Ritual, our mission is simple: to make great boba and coffee accessible to
             everyone, everywhere. We believe that drinks should bring people together, spark
             curiosity, and connect us to our roots.
           </p>
-          <ul className="font-nunito mx-auto inline-block max-w-[1060px] list-disc space-y-2 text-center text-base leading-relaxed tracking-tight text-white lg:text-[27px] lg:leading-[1.5]">
+          <ul data-animate className="font-nunito mx-auto inline-block max-w-[1060px] list-disc space-y-2 text-center text-base leading-relaxed tracking-tight text-white lg:text-[27px] lg:leading-[1.5]">
             <li>
               <strong>Quality you can taste</strong> – only the best ingredients, carefully sourced.
             </li>
@@ -148,16 +154,16 @@ export default function Story() {
               drinks.
             </li>
           </ul>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Urban Ritual Today */}
       <section className="flex justify-center px-10 py-12 lg:px-20 lg:py-20">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-8 text-2xl font-medium capitalize lg:text-[47px]">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-8 text-2xl font-medium capitalize lg:text-[47px]">
             Urban Ritual Today
           </h2>
-          <div className="font-nunito mb-12 space-y-6 text-base leading-relaxed tracking-tight text-black lg:text-[27px] lg:leading-[1.5]">
+          <div data-animate className="font-nunito mb-12 space-y-6 text-base leading-relaxed tracking-tight text-black lg:text-[27px] lg:leading-[1.5]">
             <p>
               Today, Urban Ritual serves thousands of boba and coffee lovers across the Bay Area.
               From our San Francisco location on Fell Street to our San Mateo shop on B Street,
@@ -169,7 +175,7 @@ export default function Story() {
               Ritual experience — thoughtful, flavorful, and unforgettable.
             </p>
           </div>
-          <div className="relative h-[250px] w-full overflow-hidden rounded-[30px] sm:h-[400px] lg:h-[618px] lg:rounded-[50px]">
+          <div data-animate className="relative h-[250px] w-full overflow-hidden rounded-[30px] sm:h-[400px] lg:h-[618px] lg:rounded-[50px]">
             <Image
               src="/pictures/story-team-sf.png"
               alt="Urban Ritual team at Golden Gate Bridge"
@@ -188,7 +194,7 @@ export default function Story() {
             recipes. Visit us in San Francisco or San Mateo and experience why Urban Ritual is one
             of the most loved boba cafes in Northern California.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
     </div>
   );

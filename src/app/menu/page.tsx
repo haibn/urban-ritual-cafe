@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import Button from '../../../components/ui/Button';
+import FadeIn from '../../../components/motion/FadeIn';
+import ScrollReveal from '../../../components/motion/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Menu | Urban Ritual Cafe',
@@ -76,7 +79,7 @@ const SPECIALITIES: DrinkItem[] = [
   },
   {
     name: 'Feed Me Ube!',
-    image: '/menu/feed-me-ube.png',
+    image: '/drinks/signature/feed-me-ube.png',
     description:
       'Ube Creme brulee, taro chunks, coconut milk, and a choice of rice milk or whole milk.',
   },
@@ -204,9 +207,9 @@ export default function Menu() {
     <div>
       {/* Hero */}
       <section className="flex justify-center px-6 pt-10 pb-8 sm:px-10 lg:px-20 lg:pt-[80px] lg:pb-10">
-        <div className="w-full max-w-[1280px]">
+        <FadeIn delay={0.2} stagger={0.15} className="w-full max-w-[1280px]">
           {/* Row 1: "BAY AREA'S MOST" + small image + Order Now button */}
-          <div className="flex items-end gap-4 lg:gap-6">
+          <div data-animate className="flex items-end gap-4 lg:gap-6">
             <h1 className="font-urbanist text-[32px] leading-[1.1] font-medium tracking-[3px] text-black uppercase sm:text-[50px] lg:text-[80px]">
               Bay Area&apos;s Most
             </h1>
@@ -232,7 +235,7 @@ export default function Menu() {
           </div>
 
           {/* Row 2: "CREATIVE BOBA" */}
-          <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4 lg:gap-x-6">
+          <div data-animate className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4 lg:gap-x-6">
             <span className="font-petit text-[36px] leading-[1.2] tracking-[3px] text-[#FF9500] uppercase sm:text-[54px] lg:ml-[180px] lg:text-[90px]">
               Creative
             </span>
@@ -242,7 +245,7 @@ export default function Menu() {
           </div>
 
           {/* Row 3: Blackberry image left + ("& COFFEE DRINKS" + 3-drinks image right) */}
-          <div className="flex items-start gap-4 lg:gap-6">
+          <div data-animate className="flex items-start gap-4 lg:gap-6">
             <div className="relative mt-2 hidden h-[150px] w-[140px] shrink-0 overflow-hidden rounded-2xl shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] sm:block lg:h-[205px] lg:w-[164px]">
               <Image
                 src="/menu/hero-blackberry-drink.png"
@@ -256,7 +259,7 @@ export default function Menu() {
               <h1 className="font-urbanist self-stretch text-right text-[32px] leading-[1.1] font-medium tracking-[3px] text-black uppercase sm:text-[50px] lg:text-[80px]">
                 &amp; coffee drinks
               </h1>
-              <div className="relative mt-3 h-[140px] w-full max-w-[440px] overflow-hidden rounded-2xl shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] sm:mt-4 lg:h-[224px]">
+              <div className="relative mt-3 h-[180px] w-full max-w-[440px] overflow-hidden rounded-2xl shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] sm:mt-4 lg:h-[224px]">
                 <Image
                   src="/menu/hero-three-drinks.png"
                   alt=""
@@ -269,22 +272,24 @@ export default function Menu() {
           </div>
 
           {/* Subtitle */}
-          <p className="font-urbanist mt-10 text-center text-sm leading-relaxed tracking-wide text-black uppercase sm:text-base lg:mt-16 lg:text-lg">
+          <p data-animate className="font-urbanist mt-10 text-center text-sm leading-relaxed tracking-wide text-black uppercase sm:text-base lg:mt-16 lg:text-lg">
             At Urban Ritual, every drink is crafted with care, creativity, and premium ingredients.
             Explore our menu of signature boba teas, handcrafted coffee, and refreshing pouches
             designed for every craving.
           </p>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Specialities */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
             Specialities
           </h2>
-          <DrinkGrid drinks={SPECIALITIES} />
-        </div>
+          <div data-animate>
+            <DrinkGrid drinks={SPECIALITIES} />
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* CTA Banner 1 */}
@@ -292,12 +297,14 @@ export default function Menu() {
 
       {/* Everyday Classics */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
             Everyday Classics
           </h2>
-          <DrinkGrid drinks={EVERYDAY_CLASSICS} showDescription={false} />
-        </div>
+          <div data-animate>
+            <DrinkGrid drinks={EVERYDAY_CLASSICS} showDescription={false} />
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Delivery CTA */}
@@ -307,32 +314,38 @@ export default function Menu() {
             We Are Also At
           </h2>
           <div className="flex items-center gap-6 lg:gap-10">
-            <Image
-              src="/logos/ubereats.svg"
-              alt="Uber Eats"
-              width={95}
-              height={95}
-              className="h-[60px] w-auto sm:h-[75px] lg:h-[95px]"
-            />
-            <Image
-              src="/logos/doordash.svg"
-              alt="DoorDash"
-              width={95}
-              height={95}
-              className="h-[60px] w-auto sm:h-[75px] lg:h-[95px]"
-            />
+            <Link href="#" className="hover:scale-110 transition-transform duration-200">
+              <Image
+                src="/logos/ubereats.svg"
+                alt="Uber Eats"
+                width={95}
+                height={95}
+                className="h-[60px] w-auto sm:h-[75px] lg:h-[95px]"
+              />
+            </Link>
+            <Link href="#" className="hover:scale-110 transition-transform duration-200">
+              <Image
+                src="/logos/doordash.svg"
+                alt="DoorDash"
+                width={95}
+                height={95}
+                className="h-[60px] w-auto sm:h-[75px] lg:h-[95px]"
+              />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Seasonal Specials */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
             Seasonal Specials
           </h2>
-          <DrinkGrid drinks={SEASONAL_SPECIALS} />
-        </div>
+          <div data-animate>
+            <DrinkGrid drinks={SEASONAL_SPECIALS} />
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* CTA Banner 2 */}

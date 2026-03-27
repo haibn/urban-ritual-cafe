@@ -1,15 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import LogoLink from '../ui/LogoLink';
 
 export default function Footer() {
   return (
     <footer className="relative mt-10 flex w-full justify-center px-10 pb-10 lg:px-12">
-      <div className="relative w-full rounded-[2.5rem] border-2 border-gray-100 bg-white px-6 py-10 shadow-sm lg:px-12">
+      <div className="relative w-full rounded-[2.5rem] border-2 border-gray-300 bg-white px-6 py-10 shadow-md lg:px-12">
         <div className="mx-auto flex w-full max-w-[1560px] flex-col gap-8 lg:flex-row lg:justify-between lg:gap-50">
 
           {/* Logo Section */}
           <div className="flex w-full shrink-0 items-start justify-center pt-1 lg:w-1/4 lg:justify-start">
-            <Link href="/" className="flex items-start">
+            <LogoLink className="flex items-start">
               <Image
                 src="/logos/urban-ritual-logo.png"
                 alt="Urban Ritual Logo"
@@ -17,7 +18,7 @@ export default function Footer() {
                 height={80}
                 className="object-contain"
               />
-            </Link>
+            </LogoLink>
           </div>
 
           {/* Links Grid */}

@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import FadeIn from '../../../components/motion/FadeIn';
+import ScrollReveal from '../../../components/motion/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Catering | Urban Ritual Cafe',
@@ -13,9 +15,9 @@ export default function Catering() {
     <div>
       {/* Hero */}
       <section className="flex justify-center px-6 pt-12 pb-10 sm:px-10 lg:px-20 lg:pt-[120px] lg:pb-16">
-        <div className="w-full max-w-[1280px] text-center">
+        <FadeIn delay={0.2} stagger={0.15} className="w-full max-w-[1280px] text-center">
           {/* BRING + Image row */}
-          <div className="mx-auto flex flex-col items-end justify-center gap-4 sm:flex-row sm:gap-6 lg:gap-8">
+          <div data-animate className="mx-auto flex flex-col items-center justify-center gap-4 sm:flex-col sm:gap-6 md:flex-row md:items-end lg:flex-row lg:items-end lg:gap-8">
             <h1 className="font-urbanist text-[40px] leading-[1.1] font-medium tracking-[3px] text-black uppercase sm:text-[56px] lg:text-[90px]">
               BRING
             </h1>
@@ -32,36 +34,36 @@ export default function Catering() {
           </div>
 
           {/* urban ritual */}
-          <p className="font-petit text-[36px] leading-[1.2] tracking-[3px] text-[#FF9500] lowercase sm:text-[50px] lg:text-[90px]">
+          <p data-animate className="font-petit text-[36px] leading-[1.2] tracking-[3px] text-[#FF9500] lowercase sm:text-[50px] lg:text-[90px]">
             urban ritual
           </p>
 
           {/* TO YOUR NEXT EVENT */}
-          <h1 className="font-urbanist text-[36px] leading-[1.1] font-medium tracking-[3px] text-black uppercase sm:text-[50px] lg:text-[90px]">
+          <h1 data-animate className="font-urbanist text-[36px] leading-[1.1] font-medium tracking-[3px] text-black uppercase sm:text-[50px] lg:text-[90px]">
             to your next event
           </h1>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Sub Heading - Urban Ritual Catering */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-6 text-2xl leading-[1.5] font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-8 lg:text-[61px]">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-6 text-2xl leading-[1.5] font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-8 lg:text-[61px]">
             Urban Ritual Catering
           </h2>
-          <p className="font-urbanist text-lg leading-[1.5] text-black lg:text-[36px]">
+          <p data-animate className="font-urbanist text-lg leading-[1.5] text-black lg:text-[36px]">
             Looking for unforgettable boba catering in the Bay Area? Urban Ritual brings handcrafted
             bubble tea to your parties, corporate events, weddings, and celebrations. Whether
             you&apos;re planning a small gathering or a large-scale event, our catering services are
             designed to make every sip memorable.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Why Choose Urban Ritual */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
-        <div className="flex w-full max-w-[1160px] flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
-          <div className="order-2 lg:order-1 lg:flex-1">
+        <ScrollReveal stagger={0.12} className="flex w-full max-w-[1160px] flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
+          <div data-animate className="order-2 lg:order-1 lg:flex-1">
             <h2 className="font-urbanist mb-6 text-xl font-medium text-black capitalize sm:text-2xl lg:mb-8 lg:text-[47px] lg:leading-[1.5]">
               Why Choose Urban Ritual for Boba Catering?
             </h2>
@@ -81,7 +83,7 @@ export default function Catering() {
               </li>
             </ul>
           </div>
-          <div className="relative order-1 h-[300px] w-full max-w-[392px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[398px] lg:w-[392px] lg:rounded-[50px]">
+          <div data-animate className="relative order-1 h-[300px] w-full max-w-[392px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_7px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[398px] lg:w-[392px] lg:rounded-[50px]">
             <Image
               src="/catering/catering-setup.png"
               alt="Urban Ritual catering setup"
@@ -90,16 +92,16 @@ export default function Catering() {
               className="object-cover"
             />
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* How to Book Catering */}
       <section className="flex w-full justify-center bg-[#4B4B4B] px-6 py-12 shadow-[3px_3px_8px_0px_rgba(0,0,0,0.25)] sm:px-10 lg:px-20 lg:py-24">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-8 text-2xl font-medium text-white uppercase sm:text-3xl lg:mb-10 lg:text-[47px] lg:leading-[1.5]">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-8 text-2xl font-medium text-white uppercase sm:text-3xl lg:mb-10 lg:text-[47px] lg:leading-[1.5]">
             How to Book Catering
           </h2>
-          <ol className="font-nunito list-decimal space-y-3 pl-6 text-base leading-[1.5] tracking-tight text-white lg:pl-10 lg:text-[27px]">
+          <ol data-animate className="font-nunito list-decimal space-y-3 pl-6 text-base leading-[1.5] tracking-tight text-white lg:pl-10 lg:text-[27px]">
             <li>
               Download and complete our{' '}
               <Link
@@ -120,19 +122,19 @@ export default function Catering() {
               without the completed form.
             </li>
           </ol>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Catering Options - Small Parties */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-20">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-4 text-2xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-6 lg:text-[61px] lg:leading-[1.5]">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-4 text-2xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-6 lg:text-[61px] lg:leading-[1.5]">
             Catering Options
           </h2>
-          <h3 className="font-urbanist mb-6 text-xl font-medium text-black capitalize sm:text-2xl lg:mb-8 lg:text-[47px] lg:leading-[1.5]">
+          <h3 data-animate className="font-urbanist mb-6 text-xl font-medium text-black capitalize sm:text-2xl lg:mb-8 lg:text-[47px] lg:leading-[1.5]">
             Small Parties (1&ndash;50 Drinks)
           </h3>
-          <div className="font-nunito text-base leading-[1.5] tracking-tight text-black lg:text-[27px]">
+          <div data-animate className="font-nunito text-base leading-[1.5] tracking-tight text-black lg:text-[27px]">
             <p className="mb-4">Perfect for birthdays, office lunches, or casual get-togethers.</p>
             <ol className="list-decimal space-y-3 pl-6 lg:pl-10">
               <li>
@@ -154,16 +156,16 @@ export default function Catering() {
               prepare your order with care.
             </p>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Pricing */}
       <section className="flex w-full justify-center bg-[#4B4B4B] px-6 py-12 shadow-[3px_3px_8px_0px_rgba(0,0,0,0.25)] sm:px-10 lg:px-20 lg:py-24">
-        <div className="w-full max-w-[1160px]">
-          <h2 className="font-urbanist mb-8 text-2xl font-medium text-white uppercase sm:text-3xl lg:mb-10 lg:text-[47px] lg:leading-[1.5]">
+        <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
+          <h2 data-animate className="font-urbanist mb-8 text-2xl font-medium text-white uppercase sm:text-3xl lg:mb-10 lg:text-[47px] lg:leading-[1.5]">
             Pricing
           </h2>
-          <ol className="font-nunito list-decimal space-y-3 pl-6 text-base leading-[1.5] tracking-tight text-white lg:pl-10 lg:text-[27px]">
+          <ol data-animate className="font-nunito list-decimal space-y-3 pl-6 text-base leading-[1.5] tracking-tight text-white lg:pl-10 lg:text-[27px]">
             <li>Drinks &amp; toppings at standard menu pricing</li>
             <li>
               <strong>Delivery Fee</strong> &ndash; $2/mile from store to event location (minimum
@@ -175,15 +177,15 @@ export default function Catering() {
               catering events.
             </li>
           </ol>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Catering Options 2 & 3 */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-20">
         <div className="w-full max-w-[1160px] space-y-16 lg:space-y-20">
           {/* Grab & Go Catering */}
-          <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
-            <div className="order-2 lg:order-1 lg:flex-1">
+          <ScrollReveal stagger={0.12} className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
+            <div data-animate className="order-2 lg:order-1 lg:flex-1">
               <h3 className="font-urbanist mb-4 text-xl font-medium text-black capitalize sm:text-2xl lg:mb-6 lg:text-[47px] lg:leading-[1.5]">
                 Grab &amp; Go Catering
                 <br />
@@ -200,7 +202,7 @@ export default function Catering() {
                 </ul>
               </div>
             </div>
-            <div className="relative order-1 h-[280px] w-full max-w-[344px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[346px] lg:w-[344px] lg:rounded-[50px]">
+            <div data-animate className="relative order-1 h-[280px] w-full max-w-[344px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[346px] lg:w-[344px] lg:rounded-[50px]">
               <Image
                 src="/catering/grab-and-go-crate.png"
                 alt="Grab and go boba drinks in crate"
@@ -209,11 +211,11 @@ export default function Catering() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Full-Service Boba Bar */}
-          <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
-            <div className="order-2 lg:order-1 lg:flex-1">
+          <ScrollReveal stagger={0.12} className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
+            <div data-animate className="order-2 lg:order-1 lg:flex-1">
               <h3 className="font-urbanist mb-4 text-xl font-medium text-black capitalize sm:text-2xl lg:mb-6 lg:text-[47px] lg:leading-[1.5]">
                 Full-Service Boba Bar
                 <br />
@@ -239,7 +241,7 @@ export default function Catering() {
                 </ul>
               </div>
             </div>
-            <div className="relative order-1 h-[300px] w-full max-w-[346px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[371px] lg:w-[346px] lg:rounded-[50px]">
+            <div data-animate className="relative order-1 h-[300px] w-full max-w-[346px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[371px] lg:w-[346px] lg:rounded-[50px]">
               <Image
                 src="/catering/full-service-bar.png"
                 alt="Full-service boba bar menu"
@@ -248,11 +250,11 @@ export default function Catering() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Staffing */}
-          <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
-            <div className="order-2 lg:order-1 lg:flex-1">
+          <ScrollReveal stagger={0.12} className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-20">
+            <div data-animate className="order-2 lg:order-1 lg:flex-1">
               <div className="font-nunito text-base leading-[1.5] tracking-tight text-black lg:text-[27px]">
                 <p className="mb-4 font-bold">Staffing:</p>
                 <ul className="list-disc space-y-2 pl-5">
@@ -266,7 +268,7 @@ export default function Catering() {
                 </ul>
               </div>
             </div>
-            <div className="relative order-1 h-[280px] w-full max-w-[346px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[346px] lg:w-[346px] lg:rounded-[50px]">
+            <div data-animate className="relative order-1 h-[280px] w-full max-w-[346px] shrink-0 overflow-hidden rounded-[30px] shadow-[3px_3px_10px_0px_rgba(0,0,0,0.25)] lg:order-2 lg:h-[346px] lg:w-[346px] lg:rounded-[50px]">
               <Image
                 src="/catering/drinks-lined-up.png"
                 alt="Boba drinks lined up for event"
@@ -275,7 +277,7 @@ export default function Catering() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

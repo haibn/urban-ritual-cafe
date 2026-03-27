@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import LogoLink from '../ui/LogoLink';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -19,8 +20,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between bg-white px-10 text-xl font-medium tracking-wide shadow-md lg:px-20">
-      <Link
-        href="/"
+      <LogoLink
         className={`font-urbanist py-4 ${pathname === '/' ? 'text-[#BE8F59]' : ''}`}
       >
         <Image
@@ -30,7 +30,7 @@ export default function Navbar() {
           height={330 / (186 / 1254)}
           className="h-auto max-w-[180px] lg:max-w-none"
         />
-      </Link>
+      </LogoLink>
 
       {/* Desktop links */}
       <div className="hidden space-x-6 py-4 lg:flex">

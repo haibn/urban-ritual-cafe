@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import Button from '../../../components/ui/Button';
+import FadeIn from '../../../components/motion/FadeIn';
+import ScrollReveal from '../../../components/motion/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Locations | Urban Ritual Cafe',
@@ -34,26 +36,26 @@ export default function Locations() {
     <div>
       {/* Hero */}
       <section className="flex justify-center px-5 pt-16 pb-8 lg:px-[74px] lg:pt-[60px] lg:pb-16">
-        <div className="flex h-[300px] w-full max-w-[1294px] flex-col items-center justify-center rounded-[30px] bg-[#4B4B4B] sm:h-[400px] lg:h-[686px] lg:rounded-[50px]">
-          <p className="font-petit text-[40px] tracking-[3px] text-[#FF9500] lowercase sm:text-[60px] lg:text-[90px]">
+        <FadeIn delay={0.2} stagger={0.15} className="flex h-[300px] w-full max-w-[1294px] flex-col items-center justify-center rounded-[30px] bg-[#4B4B4B] sm:h-[400px] lg:h-[686px] lg:rounded-[50px]">
+          <p data-animate className="font-petit text-[40px] tracking-[3px] text-[#FF9500] lowercase sm:text-[60px] lg:text-[90px]">
             urban ritual
           </p>
-          <h1 className="font-urbanist text-[50px] leading-none font-medium tracking-[3px] text-white uppercase sm:text-[75px] lg:text-[115px]">
+          <h1 data-animate className="font-urbanist text-[50px] leading-none font-medium tracking-[3px] text-white uppercase sm:text-[75px] lg:text-[115px]">
             LOCATIONS
           </h1>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Description */}
       <section className="flex justify-center px-6 py-8 lg:px-20 lg:py-12">
-        <div className="w-full max-w-[1280px] lg:pl-[71px]">
+        <ScrollReveal className="w-full max-w-[1280px] lg:pl-[71px]">
           <p className="font-urbanist max-w-[1139px] text-lg leading-[1.5] text-black lg:text-[36px]">
             Looking for handcrafted boba tea in San Francisco or San Mateo? Urban Ritual brings
             modern, craft-focused bubble tea to two convenient Bay Area locations. Visit us in the
             city or the peninsula for signature favorites like our Matcha Toffee, Strawberry Milk
             Bar, and Creme Brulee Milk Tea.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Our Locations */}
@@ -63,9 +65,10 @@ export default function Locations() {
             OUR LOCATIONS
           </h2>
 
-          <div className="flex flex-col gap-8 lg:gap-12">
+          <ScrollReveal stagger={0.12} className="flex flex-col gap-8 lg:gap-12">
             {locations.map((loc) => (
               <div
+                data-animate
                 key={loc.name}
                 className="flex flex-col overflow-hidden rounded-[30px] bg-[#4B4B4B] shadow-[3px_3px_8px_0px_rgba(0,0,0,0.25)] lg:h-[439px] lg:flex-row lg:items-center lg:gap-[72px] lg:overflow-visible lg:rounded-[50px] lg:px-[90px] lg:py-[63px]"
               >
@@ -157,17 +160,19 @@ export default function Locations() {
                 </div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Bottom SEO Text */}
       <section className="flex justify-center px-6 py-12 lg:px-20 lg:py-16">
+        <ScrollReveal>
         <p className="font-nunito max-w-[1140px] text-center text-sm leading-[1.5] tracking-[-0.21px] text-black uppercase lg:text-[21px]">
           Urban Ritual is proud to be part of the Bay Area&apos;s vibrant boba culture. Whether
           you&apos;re searching for &ldquo;boba in San Francisco&rdquo; or &ldquo;boba in San
           Mateo,&rdquo; our caf&eacute;s are here to serve you refreshing drinks crafted with care.
         </p>
+        </ScrollReveal>
       </section>
     </div>
   );
