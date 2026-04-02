@@ -38,8 +38,9 @@ export default function ScrollReveal({
         : null;
     const targets = visible && visible.length > 0 ? visible : el;
 
-    const fromVars: gsap.TweenVars = {
-      opacity: 0,
+    const fromValues: gsap.TweenVars = { opacity: 0 };
+    const toValues: gsap.TweenVars = {
+      opacity: 1,
       duration,
       ease: 'power3.out',
       delay,
@@ -51,22 +52,38 @@ export default function ScrollReveal({
     };
 
     if (stagger > 0 && visible && visible.length > 0) {
-      fromVars.stagger = stagger;
+      toValues.stagger = stagger;
     }
 
-    if (direction === 'up') fromVars.y = distance;
-    else if (direction === 'left') fromVars.x = distance;
-    else if (direction === 'right') fromVars.x = -distance;
+    if (direction === 'up') {
+      fromValues.y = distance;
+      toValues.y = 0;
+    } else if (direction === 'left') {
+      fromValues.x = distance;
+      toValues.x = 0;
+    } else if (direction === 'right') {
+      fromValues.x = -distance;
+      toValues.x = 0;
+    }
 
     const ctx = gsap.context(() => {
-      gsap.from(targets, fromVars);
+      if (stagger > 0 && visible && visible.length > 0) {
+        gsap.set(el, { opacity: 1 });
+      }
+      gsap.fromTo(targets, fromValues, toValues);
     }, el);
 
-    return () => ctx.revert();
+    const onLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', onLoad);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener('load', onLoad);
+    };
   }, [direction, delay, distance, duration, stagger]);
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} style={{ opacity: 0 }} className={className}>
       {children}
     </div>
   );

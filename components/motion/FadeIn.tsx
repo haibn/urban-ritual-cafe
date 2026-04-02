@@ -38,29 +38,42 @@ export default function FadeIn({
       if (visible.length > 0) targets = visible;
     }
 
-    const fromVars: gsap.TweenVars = {
-      opacity: 0,
+    const fromValues: gsap.TweenVars = { opacity: 0 };
+    const toValues: gsap.TweenVars = {
+      opacity: 1,
       duration,
       ease: 'power3.out',
       delay,
     };
 
-    if (stagger > 0 && Array.isArray(targets)) fromVars.stagger = stagger;
+    if (stagger > 0 && Array.isArray(targets)) toValues.stagger = stagger;
 
-    if (direction === 'up') fromVars.y = distance;
-    else if (direction === 'down') fromVars.y = -distance;
-    else if (direction === 'left') fromVars.x = distance;
-    else if (direction === 'right') fromVars.x = -distance;
+    if (direction === 'up') {
+      fromValues.y = distance;
+      toValues.y = 0;
+    } else if (direction === 'down') {
+      fromValues.y = -distance;
+      toValues.y = 0;
+    } else if (direction === 'left') {
+      fromValues.x = distance;
+      toValues.x = 0;
+    } else if (direction === 'right') {
+      fromValues.x = -distance;
+      toValues.x = 0;
+    }
 
     const ctx = gsap.context(() => {
-      gsap.from(targets, fromVars);
+      if (stagger > 0 && Array.isArray(targets)) {
+        gsap.set(el, { opacity: 1 });
+      }
+      gsap.fromTo(targets, fromValues, toValues);
     }, el);
 
     return () => ctx.revert();
   }, [delay, duration, direction, distance, stagger]);
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} style={{ opacity: 0 }} className={className}>
       {children}
     </div>
   );
