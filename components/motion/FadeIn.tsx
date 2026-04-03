@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useLayoutEffect, useRef, type ReactNode } from 'react';
 import gsap from 'gsap';
 
 interface FadeInProps {
@@ -24,7 +24,7 @@ export default function FadeIn({
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
 
@@ -38,9 +38,9 @@ export default function FadeIn({
       if (visible.length > 0) targets = visible;
     }
 
-    const fromValues: gsap.TweenVars = { opacity: 0 };
+    const fromValues: gsap.TweenVars = { autoAlpha: 0 };
     const toValues: gsap.TweenVars = {
-      opacity: 1,
+      autoAlpha: 1,
       duration,
       ease: 'power3.out',
       delay,
@@ -64,7 +64,7 @@ export default function FadeIn({
 
     const ctx = gsap.context(() => {
       if (stagger > 0 && Array.isArray(targets)) {
-        gsap.set(el, { opacity: 1 });
+        gsap.set(el, { autoAlpha: 1 });
       }
       gsap.fromTo(targets, fromValues, toValues);
     }, el);
@@ -73,7 +73,7 @@ export default function FadeIn({
   }, [delay, duration, direction, distance, stagger]);
 
   return (
-    <div ref={ref} style={{ opacity: 0 }} className={className}>
+    <div ref={ref} style={{ visibility: 'hidden' }} className={className}>
       {children}
     </div>
   );

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[75vh] min-h-[480px] w-full sm:h-[90vh] sm:min-h-[600px] lg:h-[890px]">
+      <section className="relative h-[75vh] min-h-[480px] w-full overflow-hidden sm:h-[90vh] sm:min-h-[600px] lg:h-[890px]">
         <Image
           src={'/banners/home-page-hero-large.jpg'}
           alt="Home Page"

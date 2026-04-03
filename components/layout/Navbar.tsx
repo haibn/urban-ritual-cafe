@@ -20,14 +20,12 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between bg-white px-10 text-xl font-medium tracking-wide shadow-md lg:px-20">
-      <LogoLink
-        className={`font-urbanist py-4 ${pathname === '/' ? 'text-[#BE8F59]' : ''}`}
-      >
+      <LogoLink className={`font-urbanist py-4 ${pathname === '/' ? 'text-[#BE8F59]' : ''}`}>
         <Image
           src={'/logos/urban-ritual-logo.png'}
           alt="Home"
           width={330}
-          height={330 / (186 / 1254)}
+          height={330 * (186 / 1254)}
           className="h-auto max-w-[180px] lg:max-w-none"
         />
       </LogoLink>

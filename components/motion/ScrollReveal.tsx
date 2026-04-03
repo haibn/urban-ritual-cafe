@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useLayoutEffect, useRef, type ReactNode } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -27,7 +27,7 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
 
@@ -38,9 +38,9 @@ export default function ScrollReveal({
         : null;
     const targets = visible && visible.length > 0 ? visible : el;
 
-    const fromValues: gsap.TweenVars = { opacity: 0 };
+    const fromValues: gsap.TweenVars = { autoAlpha: 0 };
     const toValues: gsap.TweenVars = {
-      opacity: 1,
+      autoAlpha: 1,
       duration,
       ease: 'power3.out',
       delay,
@@ -68,15 +68,19 @@ export default function ScrollReveal({
 
     const ctx = gsap.context(() => {
       if (stagger > 0 && visible && visible.length > 0) {
-        gsap.set(el, { opacity: 1 });
+        gsap.set(el, { autoAlpha: 1 });
       }
       gsap.fromTo(targets, fromValues, toValues);
     }, el);
+
+    let alive = true;
+    document.fonts.ready.then(() => { if (alive) ScrollTrigger.refresh(); });
 
     const onLoad = () => ScrollTrigger.refresh();
     window.addEventListener('load', onLoad);
 
     return () => {
+      alive = false;
       ctx.revert();
       window.removeEventListener('load', onLoad);
     };
