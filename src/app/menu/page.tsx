@@ -220,6 +220,8 @@ export default function Menu() {
                 fill
                 sizes="(max-width: 1024px) 100px, 135px"
                 className="object-cover"
+                priority
+                quality={80}
               />
             </div>
             <div className="ml-auto">
@@ -253,6 +255,8 @@ export default function Menu() {
                 fill
                 sizes="(max-width: 1024px) 140px, 164px"
                 className="object-cover"
+                priority
+                quality={80}
               />
             </div>
             <div className="flex flex-1 flex-col items-end">
@@ -266,6 +270,8 @@ export default function Menu() {
                   fill
                   sizes="(max-width: 640px) 100vw, 440px"
                   className="object-cover"
+                  priority
+                  quality={80}
                 />
               </div>
             </div>

@@ -29,6 +29,7 @@ export default function Catering() {
                 sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 329px"
                 className="object-cover"
                 priority
+                quality={80}
               />
             </div>
           </div>

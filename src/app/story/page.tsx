@@ -39,6 +39,7 @@ export default function Story() {
               sizes="(max-width: 1024px) 100vw, 440px"
               className="object-cover object-bottom"
               priority
+              quality={80}
             />
           </div>
         </FadeIn>

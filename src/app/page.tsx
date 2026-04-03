@@ -13,12 +13,13 @@ export default function Home() {
       {/* Hero */}
       <section className="relative h-[75vh] min-h-[480px] w-full overflow-hidden sm:h-[90vh] sm:min-h-[600px] lg:h-[890px]">
         <Image
-          src={'/banners/home-page-hero-large.jpg'}
+          src="/banners/home-page-hero-large.jpg"
           alt="Home Page"
           fill
-          sizes="100vw"
+          sizes="(max-width: 1024px) 100vw, 1400px"
           className="object-cover object-[center_40%]"
           priority
+          quality={80}
         />
 
         <FadeIn delay={0.3} stagger={0.15} className="relative z-10 h-full">
