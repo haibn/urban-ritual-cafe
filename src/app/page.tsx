@@ -19,7 +19,6 @@ export default function Home() {
           sizes="(max-width: 1024px) 100vw, 1400px"
           className="object-cover object-[center_40%]"
           priority
-          quality={80}
         />
 
         <FadeIn delay={0.3} stagger={0.15} className="relative z-10 h-full">
