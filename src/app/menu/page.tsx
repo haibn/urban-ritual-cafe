@@ -278,10 +278,13 @@ export default function Menu() {
           </div>
 
           {/* Subtitle */}
-          <p data-animate className="font-urbanist mt-10 text-center text-sm leading-relaxed tracking-wide text-black uppercase sm:text-base lg:mt-16 lg:text-lg">
+          <p
+            data-animate
+            className="font-urbanist mt-10 text-center text-sm leading-relaxed tracking-wide text-black uppercase sm:text-base lg:mt-16 lg:text-lg"
+          >
             At Urban Ritual, every drink is crafted with care, creativity, and premium ingredients.
-            Explore our menu of signature boba teas, handcrafted coffee, and refreshing pouches
-            designed for every craving.
+            Explore our menu of signature boba teas, and handcrafted coffees designed for every
+            craving.
           </p>
         </FadeIn>
       </section>
@@ -289,7 +292,10 @@ export default function Menu() {
       {/* Specialities */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
         <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
-          <h2 data-animate className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
+          <h2
+            data-animate
+            className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight"
+          >
             Specialities
           </h2>
           <div data-animate>
@@ -304,7 +310,10 @@ export default function Menu() {
       {/* Everyday Classics */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
         <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
-          <h2 data-animate className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
+          <h2
+            data-animate
+            className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight"
+          >
             Everyday Classics
           </h2>
           <div data-animate>
@@ -320,7 +329,7 @@ export default function Menu() {
             We Are Also At
           </h2>
           <div className="flex items-center gap-6 lg:gap-10">
-            <Link href="#" className="hover:scale-110 transition-transform duration-200">
+            <Link href="#" className="transition-transform duration-200 hover:scale-110">
               <Image
                 src="/logos/ubereats.svg"
                 alt="Uber Eats"
@@ -329,7 +338,7 @@ export default function Menu() {
                 className="h-[60px] w-auto sm:h-[75px] lg:h-[95px]"
               />
             </Link>
-            <Link href="#" className="hover:scale-110 transition-transform duration-200">
+            <Link href="#" className="transition-transform duration-200 hover:scale-110">
               <Image
                 src="/logos/doordash.svg"
                 alt="DoorDash"
@@ -345,7 +354,10 @@ export default function Menu() {
       {/* Seasonal Specials */}
       <section className="flex justify-center px-6 py-10 sm:px-10 lg:px-20 lg:py-16">
         <ScrollReveal stagger={0.12} className="w-full max-w-[1160px]">
-          <h2 data-animate className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight">
+          <h2
+            data-animate
+            className="font-urbanist mb-8 text-3xl font-medium tracking-wide text-black uppercase sm:text-4xl lg:mb-10 lg:text-[61px] lg:leading-tight"
+          >
             Seasonal Specials
           </h2>
           <div data-animate>
