@@ -42,7 +42,7 @@ export default function LocationCard({
       {/* Overlapping location image - desktop only */}
       <div className="absolute -top-8 -right-10 z-10 hidden lg:block">
         <div className="relative h-37 w-52 overflow-hidden rounded-xl">
-          <Image src={imageSrc} alt={locationName} fill className="object-cover" sizes="192px" />
+          <Image src={imageSrc} alt={locationName} fill className="object-cover" sizes="192px" quality={80} />
         </div>
       </div>
 
@@ -54,6 +54,7 @@ export default function LocationCard({
           fill
           className="object-cover object-top"
           sizes="100vw"
+          quality={80}
         />
       </div>
 

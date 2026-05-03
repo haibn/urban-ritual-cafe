@@ -92,10 +92,11 @@ export default function Story() {
             className="relative order-1 h-[400px] w-full max-w-[481px] shrink-0 overflow-hidden rounded-[30px] lg:order-2 lg:h-[601px] lg:w-[481px] lg:rounded-[50px]"
           >
             <Image
-              src="/pictures/story-artisanal-matcha.png"
+              src="/pictures/story-artisanal-matcha.webp"
               alt="Artisanal matcha drinks"
               fill
               sizes="(max-width: 1024px) 100vw, 481px"
+              quality={80}
               className="object-cover"
             />
           </div>

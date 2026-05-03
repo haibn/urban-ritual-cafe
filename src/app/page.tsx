@@ -210,11 +210,12 @@ export default function Home() {
       <section className="w-full bg-[linear-gradient(to_bottom,#4B4B4B_50%,#FFFFFF_50%)]">
         <ScrollReveal>
           <Image
-            src={'/banners/home-collage.png'}
+            src={'/banners/home-collage.webp'}
             alt="Urban Ritual's Community"
-            width={2880}
-            height={2780}
+            width={2400}
+            height={2317}
             sizes="100vw"
+            quality={80}
             className="h-auto w-full"
           />
         </ScrollReveal>
@@ -245,7 +246,7 @@ export default function Home() {
               phone="415-374-7181"
               bgColor="black"
               textColor="white"
-              imageSrc="/pictures/sf-location.png"
+              imageSrc="/pictures/sf-location.webp"
               width="72.5rem"
               height="13.5rem"
               buttonText="Order for Pickup"
@@ -257,7 +258,7 @@ export default function Home() {
               phone="650-458-3298"
               bgColor="black"
               textColor="white"
-              imageSrc="/pictures/san-mateo-location.png"
+              imageSrc="/pictures/san-mateo-location.webp"
               width="72.5rem"
               height="13.5rem"
               buttonText="Order for Pickup"
@@ -377,10 +378,11 @@ export default function Home() {
             {/* Left Image - hidden on mobile */}
             <div className="relative hidden h-full bg-white lg:block lg:w-1/2">
               <Image
-                src="/contact/customer-enjoying-drink.png"
+                src="/contact/customer-enjoying-drink.webp"
                 alt="Urban Ritual customer enjoying a drink"
                 fill
                 sizes="(max-width: 1024px) 0vw, 50vw"
+                quality={80}
                 className="object-cover object-top"
               />
             </div>

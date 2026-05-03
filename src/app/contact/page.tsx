@@ -54,10 +54,11 @@ export default function Contact() {
             {/* Left Image - hidden on mobile */}
             <div className="relative hidden h-full bg-white lg:block lg:w-1/2">
               <Image
-                src="/contact/customer-enjoying-drink.png"
+                src="/contact/customer-enjoying-drink.webp"
                 alt="Urban Ritual customer enjoying a drink"
                 fill
                 sizes="(max-width: 1024px) 0vw, 50vw"
+                quality={80}
                 className="object-cover object-top"
               />
             </div>
